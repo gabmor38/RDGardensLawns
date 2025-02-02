@@ -1,7 +1,9 @@
 
+// import Link from "next/link";
+import About from "./about";
+import Contact from "./contact";
 import Services from "./services";
 import * as React from 'react';
-import Image from 'next/image'
 
 
 
@@ -9,12 +11,12 @@ import Image from 'next/image'
 export default function Home() {
 
   return (
-    <div >
+    <div className="container-fluid" >
       <main>
-        <div className="container">
+        <div className="container mt-3">
         <nav className="navba-nav  navbar-expand-lg" role="navigation" >
           <div className="navbarTabs">
-            <h2 style={{paddingRight: '100px'}}>Richard D Softscape Landscaping</h2>
+            <h2 className="compName">Richard D Softscape Landscaping</h2>
             <ul className="nav justify-content-end">
               <li className="nav-item">
                 <a className="nav-link" aria-current="page" href="#">Home</a>
@@ -23,22 +25,36 @@ export default function Home() {
                 <a className="nav-link" href="#">About us</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Services</a>
+              {/* <Link className="nav-link" href="/services">Services</Link> */}
+                <a className="nav-link" href="#services">Services</a>
               </li>
               <li className="nav-item nav-pills">
-                <a className="nav-link">Contact</a>
+                <a className="nav-link" style={{backgroundColor:'#025416', color: 'white'}}>Contact</a>
               </li>
             </ul>
             </div>
         </nav>
         </div>
         <div className="background-div">
-            <h2></h2>
+            
         </div>
-       
-        <div>
+        <div  className="container-lg mt-4">
           <Services/>
         </div>
+        <div className="container-lg mt-4">
+          <About/>
+        </div>
+        <div  className="container-lg mt-4">
+          <Contact/>
+        </div>
+        <footer>
+          <nav className="navbar sticky-bottom bg-body-tertiary">
+            <div className="container-fluid">
+              <a className="navbar-brand" href="#">Bottom Footer</a>
+            </div>
+          </nav>
+          
+        </footer>
 
 
       </main>

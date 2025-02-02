@@ -3,10 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Services() {
   return (
-    <div className="container-lg">
-        <div className=".d-flex">
-          <h2>Our Services</h2>
+    <div id="services">
+        <div className="mx-auto p-2">
+          <h2 className="mx-auto p-2">Our Services</h2>
         </div>
+
+
         <div className="container text-center">
           <div className="row">
             <div className="col">
