@@ -1,6 +1,7 @@
 
 'use client'
 
+import { useState } from "react";
 import About from "./about";
 import Contact from "./contact";
 import Main from "./main";
@@ -8,11 +9,40 @@ import Services from "./services";
 import * as React from 'react';
 
 
-const handleClick = () => {
-
-}
-
 export default function Home() {
+
+  const [nav, setNav] = useState("");
+
+
+  const handleClick = (event: any) => {
+  console.log(event)
+    setNav(event.target.id)
+  }
+
+  const categories = [
+    {
+      name: 'Home',
+      href: '#home',
+      id: 1,
+    },
+    {
+      name: 'About',
+      href: '#about',
+      id: 2,
+    },
+    {
+      name: 'Services',
+      href: '#services',
+      id: 3,
+    },
+    {
+      name: 'Contact',
+      href: '#contact',
+      id: 4,
+    },
+  ];
+
+
   return (
     <div className="container-fluid" >
       <main>
@@ -25,11 +55,11 @@ export default function Home() {
                 <a className="nav-link" href="#">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">About us</a>
+                <a id={'2'}className="nav-link" href="#about" onClick={handleClick}>About us</a>
               </li>
               <li className="nav-item">
               {/* <Link className="nav-link" href="/services">Services</Link> */}
-                <a className="nav-link " href="#services">Services</a>
+                <a id={'3'} className="nav-link " href="#services" onClick={handleClick}>Services</a>
               </li>
               <li className="nav-item nav-pills">
                 <a className="nav-link" style={{backgroundColor:'#025416', color: 'white'}}>Contact</a>
@@ -42,13 +72,13 @@ export default function Home() {
             
         </div>
         <div  className="container-lg mt-4">
-          <Services/>
-        </div>
-        <div className="container-lg mt-4">
-          <About/>
-        </div>
-        <div  className="container-lg mt-4">
-          <Contact/>
+          { nav === "2" && (
+            <About/> 
+          ) }
+
+          { nav === "3" && (
+            <Services/> 
+          ) }
         </div>
         <footer>
           <nav className="navbar sticky-bottom bg-body-tertiary">
