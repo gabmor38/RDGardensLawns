@@ -1,15 +1,18 @@
 
-// import Link from "next/link";
+'use client'
+
 import About from "./about";
 import Contact from "./contact";
+import Main from "./main";
 import Services from "./services";
 import * as React from 'react';
 
 
+const handleClick = () => {
 
+}
 
 export default function Home() {
-
   return (
     <div className="container-fluid" >
       <main>
@@ -19,14 +22,14 @@ export default function Home() {
             <h2 className="compName">Richard D Softscape Landscaping</h2>
             <ul className="nav justify-content-end">
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="#">Home</a>
+                <a className="nav-link" href="#">Home</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">About us</a>
               </li>
               <li className="nav-item">
               {/* <Link className="nav-link" href="/services">Services</Link> */}
-                <a className="nav-link" href="#services">Services</a>
+                <a className="nav-link " href="#services">Services</a>
               </li>
               <li className="nav-item nav-pills">
                 <a className="nav-link" style={{backgroundColor:'#025416', color: 'white'}}>Contact</a>

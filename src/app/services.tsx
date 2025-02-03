@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Services() {
   return (
-    <div id="services">
+    <div id="services" >
         <div className="mx-auto p-2">
           <h2 className="mx-auto p-2">Our Services</h2>
         </div>
