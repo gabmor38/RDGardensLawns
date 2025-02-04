@@ -6,9 +6,8 @@ export default function Services() {
     <div id="services" className="mt-5" style={{display: 'flex', flexDirection: 'column'}}>
 
         <div className="mx-auto p-2">
-          <h2 className="mx-auto p-2">Our Services</h2>
+          <h2 className="mx-auto p-2 mb-5">Our Services</h2>
         </div>
-
 
         <div className="container text-center">
           <div className="row">
@@ -32,7 +31,7 @@ export default function Services() {
             </div>
             <div className="col">
               <div className="card h-100 ">
-                <img src="/pc3.png" className="card-img-top" alt="..."/>
+                <img src="/pc3.png/"className="card-img-top" alt="..."/>
                 <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
                   <h4>Garden Installation</h4>
                   <p className="card-text">Offering professional installation of new and updated garden plantings.</p>
