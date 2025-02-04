@@ -3,15 +3,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function About() {
   return (
-    <div id="about">
-       <h2 className="mt-2">Our Story</h2>
-       <div>
-        <p>Richard D Softscape and Landscaping is a company I founded about 15 years ago while working full-time, dedicating my spare time to its growth. With over 30 years of experience in the landscaping industry, I have had the opportunity to work on major projects, including contracts for the NNC in Ottawa and the DND headquarters on Carling Avenue.</p>
+    <div id="about"  className="mt-5 flex flex-column" style={{  alignItems:'center'}}>
+       <h2 className="mb-5 h1">Our Story</h2>
+       <div className="container mt-3" style={{display:'flex'}}>
+        <div>
+          <p className="fs-4"><strong>Richard D Softscape & Landscaping</strong> was built from a passion for transforming outdoor spaces. With <strong>30+ years of experience</strong>, I’ve worked on major projects, including contracts for <strong>NNC Ottawa</strong> and <strong>DND headquarters</strong> on Carling Avenue.</p>
+          
+          <p className="fs-4">What started as a part-time passion <strong>15 years ago</strong> has grown into a trusted landscaping service, backed by a <strong>skilled, dedicated team</strong> committed to quality and excellence. Now, I’m taking the next step—running the business <strong>full-time</strong> to better serve our clients.</p>
+          
+          <p className="fs-4">We specialize in <strong>custom landscaping solutions</strong> tailored to your unique needs. Whether it's routine maintenance or a full garden transformation, we’re here to bring your vision to life.</p>
+        </div>
 
-        <p>Backed by a team of highly skilled professionals and a strong commitment to excellence, I have built a reputation as a leader in the field. Now, I am ready to take the next step—running my company full-time with a dedicated small team.</p> 
 
-        <p>We take pride in offering a wide range of services tailored to meet the unique needs of our clients.</p>
-       </div>
+      </div>
     </div>
    
   );
