@@ -7,6 +7,7 @@ import Contact from "./contact";
 import Main from "./main";
 import Services from "./services";
 import * as React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 export default function Home() {
@@ -23,22 +24,22 @@ export default function Home() {
     {
       name: 'Home',
       href: '#home',
-      id: 0,
+      id: '0',
     },
     {
       name: 'About',
       href: '#about',
-      id: 1,
+      id: '1',
     },
     {
       name: 'Services',
       href: '#services',
-      id: 2,
+      id: '2',
     },
     {
       name: 'Contact',
       href: '#contact',
-      id: 3,
+      id: '3',
     },
   ];;
 
@@ -49,7 +50,7 @@ export default function Home() {
         <div className="container mt-3">
         <nav className={`navba-nav  navbar-expand-lg ${nav !== '0' ? "border-bottom":""}`} role="navigation" >
           <div className="navbarTabs">
-            <img src="/logo1.png" width="300px"/>
+            <img src="/logo1.png" width="200px"/>
             {/* <h2 className="compName">Richard D Softscape Landscaping</h2> */}
             <ul className="nav justify-content-end">
               <li className="nav-item">
@@ -79,7 +80,8 @@ export default function Home() {
             </div>
 
             <div className="container mt-3">
-               <p className="fs-4">Secure your spot for the 2025 season! I offer weekly, biweekly, and monthly lawn care, plus one-time spring cleanups, gardening, and plantings. <br></br>Maintenance plans run May–October, with spring and fall cleanups included.</p>
+               <p className="fs-4">Secure your spot for the 2025 season!</p>
+               <p className="fs-4" >Offering weekly, biweekly, and monthly lawn care, plus one-time spring cleanups, gardening, and plantings. <br></br>Maintenance plans run May–October, with spring and fall cleanups included.</p>
             </div>
             </>
           )}
@@ -98,16 +100,33 @@ export default function Home() {
           )}
         </div>
  
-        <footer >
+        <footer>
           <nav className="navbar sticky-bottom">
-            <div className="container-fluid">
-              <a className="navbar-brand" href="#">Bottom Footer</a>
+          <div className="container ">
+            <div className="row">
+                <div className="col-md-6">
+                  Column
+                </div>
+                <div className="col-md-3">
+                  <img src="/vercel.svg" width="30px"/>
+                </div>
+                <div className="col-md-3">
+                  <ul className='hidden md:flex gap-x-8 gap-y-4'>
+                    {categories.map(category => {
+                      return (
+                        <li key={category.id}>
+                          <a id={category.id} href={category.href} className='hover:text-emerald-950 text-light' onClick={handleClick} style={{textDecoration: 'none'}}>
+                            {category.name}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
             </div>
           </nav>
-          
         </footer>
-
-
       </main>
     </div>
    
