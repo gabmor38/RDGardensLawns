@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function About() {
@@ -45,7 +46,7 @@ export default function About() {
 
               <p className="fs-4">
                 We specialize in <strong>custom landscaping solutions</strong>{" "}
-                tailored to your unique needs. Whether it's routine maintenance
+                tailored to your unique needs. Whether it&apos;s routine maintenance
                 or a full garden transformation, we’re here to bring your vision
                 to life.
               </p>

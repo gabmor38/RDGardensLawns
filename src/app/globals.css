@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground:  #0a0a0a;
   --background:  #ffffff;
@@ -17,7 +18,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif, system-ui;
+  font-family:monospace;
   font-size: 18px;
 }
 
@@ -29,13 +30,15 @@ body {
   height: 100px
 }
 
+
 .navbarTabs {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   li {
-    font-weight: 700;
+    font-family: Roboto;
+    font-weight: 500;
     padding:20px;
     color:#818C78;
     font-size: x-large;
@@ -103,3 +106,12 @@ a.nav-link {
   padding: 20px 30px;
   text-align: center;
 }
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width:100%;
+  margin-top: 30px;
+}
+
