@@ -50,7 +50,7 @@ export default function Home() {
         <div className="container mt-3">
         <nav className={`navba-nav  navbar-expand-lg ${nav !== '0' ? "border-bottom":""}`} role="navigation" >
           <div className="navbarTabs">
-            <img src="/logo1.png" width="200px"/>
+            <img src="/logo3.png" width="150px"/>
             {/* <h2 className="compName">Richard D Softscape Landscaping</h2> */}
             <ul className="nav justify-content-end">
               <li className="nav-item">
@@ -80,8 +80,37 @@ export default function Home() {
             </div>
 
             <div className="container mt-3">
-               <p className="fs-4">Secure your spot for the 2025 season!</p>
+               <p className="fs-2">Secure your spot for the 2025 season!</p>
                <p className="fs-4" >Offering weekly, biweekly, and monthly lawn care, plus one-time spring cleanups, gardening, and plantings. <br></br>Maintenance plans run May–October, with spring and fall cleanups included.</p>
+            </div>
+
+            <div className="container mt-5">
+              <h2 className="fs-2">Explore our Projects </h2>
+              <div className="row row-cols-1 row-cols-md-2 g-4">
+                <div className="col">
+                  <div className="card">
+                    <img src="/pic2.png" className="card-img-top" alt="..."/>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="card">
+                    <img src="/pic3.png" className="card-img-top" alt="..."/>
+                   
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="card">
+                    <img src="/pic4.png" className="card-img-top" alt="..."/>
+                    
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="card">
+                    <img src="/pic5.png" className="card-img-top" alt="..."/>
+                    
+                  </div>
+                </div>
+              </div>
             </div>
             </>
           )}
@@ -102,15 +131,15 @@ export default function Home() {
  
         <footer>
           <nav className="navbar sticky-bottom">
-          <div className="container ">
-            <div className="row">
-                <div className="col-md-6">
+          <div className="container-fluid ">
+            <div className="row ">
+                <div className="col-md-3">
                   Column
                 </div>
                 <div className="col-md-3">
-                  <img src="/vercel.svg" width="30px"/>
+                  <img src="/vercel.svg" width="30px" style={{color: 'white'}}/>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-6">
                   <ul className='hidden md:flex gap-x-8 gap-y-4'>
                     {categories.map(category => {
                       return (
