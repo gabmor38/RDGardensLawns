@@ -15,6 +15,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "RD SoftScape Landscaping",
   description: "",
+  icons: {
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: '/logo1.png',
+        href: '/logo1.png',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

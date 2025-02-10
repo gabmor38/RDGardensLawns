@@ -105,7 +105,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="col-12">
-              <button type="submit" className="btn" style={{backgroundColor:"#5C7285", color: 'white'}}>Sign in</button>
+              <button type="submit" className="btn" style={{backgroundColor:"#5C7285", color: 'white'}}>Submit</button>
             </div>
           </form>
           </div>
