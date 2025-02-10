@@ -64,40 +64,40 @@ export default function Home() {
 
             <div className="container mt-5 mb-5">
               <h2 className="display-4 mb-5">Explore our Projects </h2>
-              <div className="row row-cols-1 row-cols-md-2 g-4 clearfix mb-5" style={{borderTop: '1px solid #818C78'}}>
+              <div className="row row-cols-1 row-cols-md-2 g-4 clearfix mb-5 pb-5" style={{borderTop: '1px solid #818C78'}}>
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic2.png" className="card-img-top rounded" alt="..."/>
+                    <img src="/pic2.png" className="card-img-top rounded" alt="garden"/>
                   </div>
                 </div>
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic3.png" className="card-img-top rounded" alt="..."/>
+                    <img src="/pic3.png" className="card-img-top rounded" alt="shrubs"/>
                    
                   </div>
                 </div>
                 
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic4.png" className="card-img-top rounded" alt="..."/>
+                    <img src="/pic4.png" className="card-img-top rounded" alt="lawn"/>
                     
                   </div>
                 </div>
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic1.png" className="card-img-top rounded" alt="..."/>
+                    <img src="/pic1.png" className="card-img-top rounded" alt="graden"/>
                     
                   </div>
                 </div>
                 <div className="col">
                   <div className="card">
-                    <img src="/pic5.png " className="card-img-top" alt="..." width="600px" height="400"/>
+                    <img src="/pic5.png " className="card-img-top" alt="flower bed" width="600px" height="400" />
                     
                   </div>
                 </div>
                 <div className="col">
                   <div className="card">
-                    <img src="/pic6.png " className="card-img-top" alt="..." width="600px" height="400"/>
+                    <img src="/pic6.png " className="card-img-top" width="600px" height="400" alt="sloped flower bed"/>
                     
                   </div>
                 </div>
