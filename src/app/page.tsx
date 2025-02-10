@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 
 'use client'
@@ -14,11 +15,33 @@ import Footer from "./footer";
 export default function Home() {
 
   const [nav, setNav] = useState("0");
+  const [formData, setFormData] = useState({
+    firstName:"",
+    lastName: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  })
 
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleClick = (event: any) => {
     setNav(event.target.id)
+  }
+
+  const updateFormData = (field:any, value:any) => {
+    setFormData({ ...formData, [field]: value });
+  };
+
+  const onSubmitForm = (event: any) => {
+    event.preventDefault();
+
+    const mailtoLink = `mailto:gabrielamorenor@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
+    window.location.href = mailtoLink;
+    console.log('Form submitted:', formData);
+    setFormData(
+      {...formData}, 
+    )
   }
 
  
@@ -115,7 +138,7 @@ export default function Home() {
 
           { nav === "3" && (
 
-            <Contact/>
+            <Contact handleSubmitForm = {onSubmitForm} formData={formData} updateFormData={updateFormData}/>
           )}
         </div>
  

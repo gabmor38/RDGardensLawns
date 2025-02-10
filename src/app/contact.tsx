@@ -1,12 +1,21 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "bootstrap/dist/css/bootstrap.min.css";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Contact() {
+interface ContactProps {
+  handleSubmitForm:(value: any) => void;
+  formData: any;
+  updateFormData:(field:any, value:any)=> void;
+}
 
-  const onHandleSubmit = (value: string) :void => {
-    console.log(value)
+export default function Contact({ handleSubmitForm, formData, updateFormData }: ContactProps) {
+
+  const onChangeField = (e: any) :void => {
+    updateFormData(e.target.id, e.target.value);
   }
+
+ 
 
 
   return (
@@ -78,40 +87,46 @@ export default function Contact() {
           <form className="row g-3" action={"mailto:gabrielamorenor@gmail.com"}>
             <div className="col-md-6">
               <label htmlFor="firstName" className="form-label">First Name</label>
-              <input type="text" className="form-control" id="firstName"/>
+              <input type="text" className="form-control" id="firstName" value={formData.firstName} onChange={onChangeField}/>
             </div>
             <div className="col-md-6">
               <label htmlFor="lastName" className="form-label">Last Name</label>
-              <input type="text" className="form-control" id="lastName"/>
+              <input type="text" className="form-control" id="lastName" value={formData.lastName}  onChange={onChangeField}/>
             </div>
             <div className="col-12">
               <label htmlFor="email" className="form-label">Email</label>
-              <input type="email" className="form-control" id="email" placeholder="email@example.com"/>
+              <input type="email" className="form-control" id="email" placeholder="email@example.com" value={formData.email}  onChange={onChangeField}/>
             </div>
             <div className="col-md-6">
               <label htmlFor="phone" className="form-label">Phone</label>
-              <input type="tel" className="form-control" id="phone" placeholder="(613)-XXX-XXXX"/>
+              <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-control" id="phone" placeholder="(613)-XXX-XXXX" value={formData.phone} onChange={onChangeField}/>
             </div>
             <div className="col-md-6">
               <label htmlFor="service" className="form-label">Service</label>
-              <input type="text" className="form-control" id="service"/>
+              <select id="service" className="form-select" aria-label="Services" value={formData.services} onChange={onChangeField}>
+                <option value="0">Please select an option</option>
+                <option value="Lawn Mowing">Lawn Mowing</option>
+                <option value="Garden Maintenance">Garden Maintenance</option>
+                <option value="Garden Cleanups">Garden Cleanups</option>
+                <option value="Custom Garden Care">Custom Garden Care</option>
+              </select>
             </div>
             <div className="col-12">
               <label htmlFor="message" className="form-label">Message</label>
-              <textarea className="form-control" id="message" placeholder="Leave us a message"/>
+              <textarea className="form-control" id="message" placeholder="Leave us a message" value={formData.message}  onChange={onChangeField}/>
             </div>
             
            
-            <div className="col-12">
+            <div className="col-12 flex justify-content-center">
               <div className="form-check">
                 <input className="form-check-input" type="checkbox" id="gridCheck"/>
-                <label className="form-check-label" htmlFor="gridCheck">
+                <label className="form-check-label ms-3" htmlFor="gridCheck">
                   Check me out
                 </label>
               </div>
             </div>
             <div className="col-12">
-              <button type="submit" className="btn" style={{backgroundColor:"#5C7285", color: 'white'}} onClick={() => onHandleSubmit}>Submit</button>
+              <button type="submit" className="btn" style={{backgroundColor:"#5C7285", color: 'white'}} onClick={handleSubmitForm}>Submit</button>
             </div>
           </form>
           </div>
