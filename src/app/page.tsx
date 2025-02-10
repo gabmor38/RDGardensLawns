@@ -63,7 +63,7 @@ export default function Home() {
             </div>
 
             <div className="container mt-5 mb-5">
-              <h2 className="display-3 mb-5">Explore our Projects </h2>
+              <h2 className="display-4 mb-5">Explore our Projects </h2>
               <div className="row row-cols-1 row-cols-md-2 g-4 clearfix mb-5" style={{borderTop: '1px solid #818C78'}}>
                 <div className="col">
                   <div className="card border-white">
@@ -95,6 +95,12 @@ export default function Home() {
                     
                   </div>
                 </div>
+                <div className="col">
+                  <div className="card">
+                    <img src="/pic6.png " className="card-img-top" alt="..." width="600px" height="400"/>
+                    
+                  </div>
+                </div>
               </div>
             </div>
             </>
@@ -114,8 +120,8 @@ export default function Home() {
           )}
         </div>
  
-      </main>
         <Footer handleNavClick={handleClick}/>
+      </main>
     </div>
     </>
 
