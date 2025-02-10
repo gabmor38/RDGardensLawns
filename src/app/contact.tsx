@@ -3,6 +3,12 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Contact() {
+
+  const onHandleSubmit = (value: string) :void => {
+    console.log(value)
+  }
+
+
   return (
     <div id="contact" className="mt-5 flex flex-column">
       <div className="mx-auto p-2">
@@ -69,7 +75,7 @@ export default function Contact() {
           </div>
           <div className="col-md-5 rounded-2 p-3" style={{background: 'rgb(226 224 200 / 36%)'}}>
 
-          <form className="row g-3">
+          <form className="row g-3" action={"mailto:gabrielamorenor@gmail.com"}>
             <div className="col-md-6">
               <label htmlFor="firstName" className="form-label">First Name</label>
               <input type="text" className="form-control" id="firstName"/>
@@ -105,7 +111,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="col-12">
-              <button type="submit" className="btn" style={{backgroundColor:"#5C7285", color: 'white'}}>Submit</button>
+              <button type="submit" className="btn" style={{backgroundColor:"#5C7285", color: 'white'}} onClick={() => onHandleSubmit}>Submit</button>
             </div>
           </form>
           </div>

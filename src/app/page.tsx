@@ -5,11 +5,10 @@
 import { useState } from "react";
 import About from "./about";
 import Contact from "./contact";
-//import Main from "./main";
 import Services from "./services";
 import * as React from 'react';
 import Footer from "./footer";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 
 export default function Home() {
