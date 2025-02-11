@@ -6,8 +6,8 @@ export default function Services() {
   return (
     <div id="services" className="mt-5 mb-5" style={{display: 'flex', flexDirection: 'column'}}>
 
-        <div className="mx-auto p-2">
-          <h2 className="mx-auto p-2 mb-5">Our Services</h2>
+        <div className="mx-auto p-2 flex flex-column">
+          <h2 className="mx-auto p-2 mb-5">Residential and Commercial Landscaping Services</h2>
         </div>
 
         <div className="container text-center">

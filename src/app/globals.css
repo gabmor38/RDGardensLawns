@@ -10,7 +10,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background:#818C78;
+    --background:#ffffff;
     --foreground:#0a0a0a;
   }
 }
@@ -22,7 +22,7 @@ body {
   font-size: 18px;
 }
 
-.navbar {
+.navbarFooter {
   display: flex;
   align-items: center;
   padding: 20px;
@@ -32,9 +32,10 @@ body {
 
 
 .navbarTabs {
-  display: flex;
+
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
 
   li {
     font-family: Roboto;

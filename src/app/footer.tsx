@@ -43,7 +43,7 @@ export default function Footer({ handleNavClick }: FooterProps) {
       
   return (
     <footer>
-          <nav className="navbar  justify-content-end">
+          <nav className="navbar  flex justify-content-end" style={{background: '#818C78', padding: '20px'}}>
             <div className="container text-center">
                 <div className="col col-lg-1">
                   <a href="https://www.facebook.com/profile.php?id=61572609634679" target="_blank" role="button" data-bs-toggle="button">

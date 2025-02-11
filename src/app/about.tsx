@@ -45,7 +45,7 @@ export default function About() {
               </p>
 
               <p className="fs-4">
-                We specialize in <strong>custom landscaping solutions</strong>{" "}
+                We specialize in <strong>residential and commercial landscaping solutions</strong>{" "}
                 tailored to your unique needs. Whether it&apos;s routine maintenance
                 or a full garden transformation, we’re here to bring your vision
                 to life.

@@ -95,7 +95,7 @@ export default function Contact({ handleSubmitForm, formData, updateFormData }: 
             </div>
             <div className="col-12">
               <label htmlFor="email" className="form-label">Email</label>
-              <input type="email" className="form-control" id="email" placeholder="email@example.com" value={formData.email}  onChange={onChangeField}/>
+              <input type="email" className="form-control" id="email" placeholder="email@example.com" value={formData.email}  onChange={onChangeField} required/>
             </div>
             <div className="col-md-6">
               <label htmlFor="phone" className="form-label">Phone</label>
