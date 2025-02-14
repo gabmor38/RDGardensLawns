@@ -11,7 +11,7 @@ export default function Services() {
         </div>
 
         <div className="container text-center">
-          <div className="row">
+          <div className="row row-cols-1 row-cols-sm-3 g-4">
             <div className="col">
               <div className="card h-100">
                 <img src="/pic1.png" className="card-img-top" alt="..."/>
@@ -25,8 +25,8 @@ export default function Services() {
               <div className="card h-100 ">
                 <img src="/pic2.png" className="card-img-top" alt="..."/>
                 <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
-                  <h4>Garden Maintenance</h4>
-                 <p className="card-text">Continuous garden maintenance with optional spring and fall cleanups.</p>
+                  <h4>Retaining Walls & Patios</h4>
+                 <p className="card-text">Installation of patios and retaining walls for functional and attractive garden spaces.</p>
                 </div>
               </div>
             </div>
@@ -35,10 +35,38 @@ export default function Services() {
                 <img src="/pic3.png/"className="card-img-top" alt="..."/>
                 <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
                   <h4>Garden Installation</h4>
-                  <p className="card-text">Offering professional installation of new and updated garden plantings.</p>
+                  <p className="card-text">Offering professional garden installation projects, including the design and installation of new and updated gardens.</p>
                 </div>
               </div>
             </div>
+            <div className="col  mb-5">
+              <div className="card h-100 ">
+                <img src="/pic3.png/"className="card-img-top" alt="..."/>
+                <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
+                  <h4>Yard Work (On-Demand)</h4>
+                  <p className="card-text">Flexible, on-demand yard work services to meet your immediate landscaping needs.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col  mb-5">
+              <div className="card h-100 ">
+                <img src="/pic3.png/"className="card-img-top" alt="..."/>
+                <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
+                  <h4>Spring & Fall Clean-Ups</h4>
+                  <p className="card-text">Comprehensive seasonal clean-ups to refresh and prepare your yard for the changing seasons.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col mb-5">
+              <div className="card h-100 ">
+                <img src="/pic4.png/"className="card-img-top" alt="sod" height='280px'/>
+                <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
+                  <h4>Sod Installation</h4>
+                  <p className="card-text">Proven installation of sod to create new lawns or replace existing ones.</p>
+                </div>
+              </div>
+            </div>
+            <div className=" mb-5"></div>
           </div>
         </div>
     </div>
