@@ -47,9 +47,9 @@ export default function Home() {
     )
   }
 
-  const getHamburgerMenu = () => {
+  // const getHamburgerMenu = () => {
 
-  }
+  // }
 
     const services = [
       {
