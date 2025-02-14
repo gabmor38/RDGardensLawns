@@ -87,19 +87,19 @@ export default function Contact({ handleSubmitForm, formData, updateFormData }: 
           <form className="row g-3" action={"mailto:gabrielamorenor@gmail.com"}>
             <div className="col-md-6">
               <label htmlFor="firstName" className="form-label" >First Name</label>
-              <input type="text" className="form-control" id="firstName" value={formData.firstName} onChange={onChangeField} />
+              <input type="text" className="form-control" id="firstName" value={formData.firstName} onChange={onChangeField} required/>
             </div>
             <div className="col-md-6">
               <label htmlFor="lastName" className="form-label">Last Name</label>
-              <input type="text" className="form-control" id="lastName" value={formData.lastName}  onChange={onChangeField}/>
+              <input type="text" className="form-control" id="lastName" value={formData.lastName}  onChange={onChangeField} required/>
             </div>
             <div className="col-12">
               <label htmlFor="email" className="form-label">Email</label>
-              <input type="email" className="form-control" id="email" placeholder="email@example.com" value={formData.email}  onChange={onChangeField} required/>
+              <input type="email" className="form-control" id="email" placeholder="email@example.com" value={formData.email}  onChange={onChangeField} required />
             </div>
             <div className="col-md-6">
               <label htmlFor="phone" className="form-label">Phone</label>
-              <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-control" id="phone" placeholder="(613)-XXX-XXXX" value={formData.phone} onChange={onChangeField}/>
+              <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-control" id="phone" placeholder="(613)-XXX-XXXX" value={formData.phone} onChange={onChangeField} required/>
             </div>
             <div className="col-md-6">
               <label htmlFor="service" className="form-label">Service</label>
