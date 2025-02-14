@@ -86,8 +86,8 @@ export default function Contact({ handleSubmitForm, formData, updateFormData }: 
 
           <form className="row g-3" action={"mailto:gabrielamorenor@gmail.com"}>
             <div className="col-md-6">
-              <label htmlFor="firstName" className="form-label">First Name</label>
-              <input type="text" className="form-control" id="firstName" value={formData.firstName} onChange={onChangeField}/>
+              <label htmlFor="firstName" className="form-label" >First Name</label>
+              <input type="text" className="form-control" id="firstName" value={formData.firstName} onChange={onChangeField} />
             </div>
             <div className="col-md-6">
               <label htmlFor="lastName" className="form-label">Last Name</label>
@@ -105,9 +105,12 @@ export default function Contact({ handleSubmitForm, formData, updateFormData }: 
               <label htmlFor="service" className="form-label">Service</label>
               <select id="service" className="form-select" aria-label="Services" value={formData.services} onChange={onChangeField}>
                 <option value="0">Please select an option</option>
-                <option value="Lawn Mowing">Lawn Mowing</option>
+                <option value="Yard Work">Yard Work</option>
                 <option value="Garden Maintenance">Garden Maintenance</option>
                 <option value="Garden Cleanups">Garden Cleanups</option>
+                <option value="Sod Installation">Sod Installation</option>
+                <option value="Retaining Walls and Patios">Retaining Walls & Patios</option>
+                <option value="Seasonal garden clean-up">Seasonal garden clean-up</option>
                 <option value="Custom Garden Care">Custom Garden Care</option>
               </select>
             </div>

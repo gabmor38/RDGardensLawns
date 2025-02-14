@@ -10,6 +10,7 @@ import Services from "./services";
 import * as React from 'react';
 import Footer from "./footer";
 //import Reviews from "./reviews";
+import {motion} from 'framer-motion';
  
 
 
@@ -29,6 +30,7 @@ export default function Home() {
 
 
   const handleClick = (event: any) => {
+    console.log(event)
     setNav(event.target.id)
   }
 
@@ -182,15 +184,33 @@ export default function Home() {
               <h2 className="mb-5 display-4 text-center">Our Services</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {services.map((service, index) => (
-                  <div
+                    <motion.div
                     key={index}
-                    className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition-shadow duration-300" 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-white shadow-lg rounded-2xl p-6 transition-shadow duration-300 hover:shadow-2xl"
                     style={{borderBottom: '5px solid #818C78'}}
                   >
                     <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                     <p className="text-gray-600">{service.description}</p>
-                  </div>
+                  </motion.div>
                 ))}
+              </div>
+              <div className="container mt-5 mb-5 text-center">
+                <a  href="#contact" onClick={handleClick}   >
+                  <motion.button
+                    id={'3'}
+                    whileHover={{
+                      scale:1.3,
+                      textShadow: "0px 0px 8px rgb(255,255,255)",
+                      boxShadow: "0px 0px 8px rgb(255,255,255)",
+                    }}
+                    className="py-2 px-4 rounded-lg"
+                    style={{ backgroundColor: '#5C7285', color: 'white' }}
+                  >
+                    Get a quote
+                  </motion.button>
+                </a>
               </div>
             </section>
 
