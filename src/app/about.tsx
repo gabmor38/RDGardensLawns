@@ -12,7 +12,7 @@ export default function About() {
         <h2 className="mx-auto p-2 h1">Our Story</h2>
       </div>
 
-      <div className="card mb-3" style={{ border: "none", padding: "20px" }}>
+      <div className="card mb-5" style={{ border: "none", padding: "20px" }}>
         <div className="row g-1">
           <div className="col-md-4">
             <img
@@ -54,6 +54,7 @@ export default function About() {
           </div>
         </div>
       </div>
+      <div className="mt-5 mb-5 "></div>
     </div>
   );
-}
+  }

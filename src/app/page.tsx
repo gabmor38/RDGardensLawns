@@ -11,6 +11,7 @@ import * as React from 'react';
 import Footer from "./footer";
 //import Reviews from "./reviews";
 import {motion} from 'framer-motion';
+import Link from 'next/link'
  
 
 
@@ -35,18 +36,21 @@ export default function Home() {
   }
 
   const updateFormData = (field:any, value:any) => {
+
     setFormData({ ...formData, [field]: value });
   };
 
   const onSubmitForm = (event: any) => {
     event.preventDefault();
+ 
+   
 
-    const mailtoLink = `mailto:gabrielamorenor@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
-    window.location.href = mailtoLink;
-    console.log('Form submitted:', formData);
-    setFormData(
-      {...formData}, 
-    )
+    // const mailtoLink = `mailto:gabrielamorenor@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
+    // window.location.href = mailtoLink;
+    // console.log('Form submitted:', formData);
+    // setFormData(
+    //   {...formData}, 
+    // )
   }
 
   // const getHamburgerMenu = () => {
@@ -120,6 +124,8 @@ export default function Home() {
             <div className="navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li className="nav-item">
+                  <Link id={'0'} className="nav-link" href="/home" onClick={handleClick}></Link>
+
                   <a id={'0'} className="nav-link" href="#home" onClick={handleClick}>Home</a>
                 </li>
                 <li className="nav-item">

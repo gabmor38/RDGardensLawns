@@ -116,3 +116,15 @@ footer{
   margin-top: 30px;
 }
 
+.card-img-fixed {
+  height: 280px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the image is cropped to fit */
+}
+
+/* input:invalid:required {
+  border: 2px dashed red;
+}
+input:valid:required{
+  border: none;
+} */
+
