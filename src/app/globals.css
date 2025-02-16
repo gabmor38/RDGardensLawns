@@ -103,7 +103,7 @@ a.nav-link {
   color: white;
   font-size: 20px;
   font-weight: bold;
-  background: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent background */
+  background: rgba(0, 0, 0, 0.5); 
   padding: 20px 30px;
   text-align: center;
 }
@@ -117,14 +117,14 @@ footer{
 }
 
 .card-img-fixed {
-  height: 280px; /* Set a fixed height */
-  object-fit: cover; /* Ensures the image is cropped to fit */
+  height: 280px; 
+  object-fit: cover; 
 }
 
-/* input:invalid:required {
-  border: 2px dashed red;
+
+.inputInvalid {
+  color: #840c0c;
+  font-size: small;
+  text-align: start;
 }
-input:valid:required{
-  border: none;
-} */
 

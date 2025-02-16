@@ -13,44 +13,49 @@ import Footer from "./footer";
 import {motion} from 'framer-motion';
 import Link from 'next/link'
  
-
+export interface FormDataType {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  service: string;
+  message: string;
+};
 
 
 export default function Home() {
 
   const [nav, setNav] = useState("0");
-  const [formData, setFormData] = useState({
-    firstName:"",
+  const [formData, setFormData] = useState<FormDataType>({
+    firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    service: "",
+    service: "0",
     message: "",
   });
+  const [fieldError, setFieldError] = useState([])
  
-
-
   const handleClick = (event: any) => {
-    console.log(event)
     setNav(event.target.id)
   }
 
   const updateFormData = (field:any, value:any) => {
-
+    
     setFormData({ ...formData, [field]: value });
   };
 
-  const onSubmitForm = (event: any) => {
-    event.preventDefault();
- 
-   
+  const onSubmitForm = (values: any) => {
 
-    // const mailtoLink = `mailto:gabrielamorenor@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
-    // window.location.href = mailtoLink;
-    // console.log('Form submitted:', formData);
-    // setFormData(
-    //   {...formData}, 
-    // )
+    const mailtoLink = `mailto:gabrielamorenor@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
+    if (!values || Object.keys(values).length === 0) {
+      window.location.href = mailtoLink;
+      console.log('Form submitted:', formData);
+      
+    } else {
+      setFieldError(values)
+    }
+   
   }
 
   // const getHamburgerMenu = () => {
@@ -141,39 +146,10 @@ export default function Home() {
             </div>
           </div>
         </nav>
-      <div className="container mt-3">
-      </div>
+        <div className="container mt-3">
+       </div>
 
-        {/* <div className="container mt-3 ">
-        
-        <nav className={`navba-nav  navbar-expand-lg ${nav !== '0' ? "border-bottom":""}`} role="navigation" >
-          <div className="container-fluid">          
-            <div className="navbarTabs">
-              <a className="navbar-brand" href="#home"><img src="/logo3.png" width="150px" alt="logo"/></a>
-              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="navbar-collapse " id="navbarNavDropdown">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
-                    <a id={'0'} className="nav-link" href="#home" onClick={handleClick}>Home</a>
-                  </li>
-                  <li className="nav-item">
-                    <a id={'1'}className="nav-link" href="#about" onClick={handleClick}>About us</a>
-                  </li>
-                  <li className="nav-item">
-                    <a id={'2'} className="nav-link " href="#services" onClick={handleClick}>Services</a>
-                  </li>
-                  <li className="nav-item nav-pills">
-                    <a id={'3'} className="nav-link" href='#contact' style={{backgroundColor:'#5C7285', color: 'white'}} onClick={handleClick}>Contact</a>
-                  </li>
-                </ul>
-            </div>
-            </div>
-          </div>
-        </nav>
-        </div>
-         */}
+       
         <div className="w-100 bg-white mb-5">
 
           {nav === "0" && (
@@ -203,7 +179,7 @@ export default function Home() {
                 ))}
               </div>
               <div className="container mt-5 mb-5 text-center">
-                <a  href="#contact" onClick={handleClick}   >
+                <a  href="#contact" onClick={handleClick}  >
                   <motion.button
                     id={'3'}
                     whileHover={{
@@ -281,7 +257,7 @@ export default function Home() {
 
           { nav === "3" && (
 
-            <Contact handleSubmitForm = {onSubmitForm} formData={formData} updateFormData={updateFormData}/>
+            <Contact handleSubmitForm = {onSubmitForm} formData={formData} updateFormData={updateFormData} errors={fieldError}/>
           )}
         </div>
         <div className="mt-5">

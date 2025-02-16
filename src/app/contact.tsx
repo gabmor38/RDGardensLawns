@@ -2,28 +2,44 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FormDataType } from "./page";
 
 interface ContactProps {
   handleSubmitForm: (value: any) => void;
-  formData: any;
+  formData: FormDataType;
   updateFormData: (field: any, value: any) => void;
+  errors: any;
 }
 
-export default function Contact({handleSubmitForm,formData, updateFormData,}: ContactProps) {
+export default function Contact({handleSubmitForm,formData, errors, updateFormData,}: ContactProps) {
 
   const onChangeField = (e: any): void => {
     updateFormData(e.target.id, e.target.value);
   };
 
-  const validateSubmitForm = ():void => {
-    Object.values(formData).forEach(value => {
-      console.log(value);
+  const validateSubmitForm = (e: any):void => {
+    e.preventDefault();
+
+    const fieldErrors: Record<string, string> = {};
+    const phonePattern = /^(\+1\s?)?(\()?([2-9][0-9]{2})(\))?[-.\s]?([2-9][0-9]{2})[-.\s]?([0-9]{4})$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+ 
+    Object.entries(formData).forEach(([key, value]) => {
+       if (value.trim() === "") {
+        fieldErrors[key] = "Required field"
+       }
+      else if (key === "phone" && !phonePattern.test(value)) {
+        fieldErrors[key] = "Enter a valid phone number"
+       }
+       else if (key === 'email' && !emailPattern.test(value)) {
+        fieldErrors[key] = "Enter a valid email address"
+       } 
+
     });
 
-
+    handleSubmitForm(fieldErrors)
   }
-
-
 
   return (
     <div id="contact" className="mt-5 flex flex-column">
@@ -93,7 +109,7 @@ export default function Contact({handleSubmitForm,formData, updateFormData,}: Co
             className="col-md-5 rounded-2 p-3"
             style={{ background: "rgb(226 224 200 / 36%)" }}
           >
-            <form className="row g-3 ">
+            <form className="row g-3 " >
               <div className="col-md-6">
                 <label htmlFor="firstName" className="form-label">
                   First Name
@@ -105,8 +121,11 @@ export default function Contact({handleSubmitForm,formData, updateFormData,}: Co
                   value={formData.firstName}
                   onChange={onChangeField}
                   required
+                  style={{ border: errors.firstName ? "2px solid #840c0c" : "" }}
                 />
-                <div className="invalid-feedback">Field is required.</div>
+                {errors.firstName && (
+                  <div className="inputInvalid" >{errors.firstName}</div>
+                )}
               </div>
               <div className="col-md-6">
                 <label htmlFor="lastName" className="form-label">
@@ -119,8 +138,11 @@ export default function Contact({handleSubmitForm,formData, updateFormData,}: Co
                   value={formData.lastName}
                   onChange={onChangeField}
                   required
+                  style={{ border: errors.lastName? "2px solid #840c0c" : "" }}
                 />
-                <div className="invalid-feedback">Field is required.</div>
+                {errors.lastName  && (
+                  <div className="inputInvalid">{errors.lastName}</div>
+                )}
               </div>
               <div className="col-12">
                 <label htmlFor="email" className="form-label">
@@ -134,8 +156,11 @@ export default function Contact({handleSubmitForm,formData, updateFormData,}: Co
                   value={formData.email}
                   onChange={onChangeField}
                   required
+                  style={{ border: errors.email ? "2px solid #840c0c" : "" }}
                 />
-                <div className="invalid-feedback">Field is required.</div>
+                { errors.email && (
+                  <div className="inputInvalid">{errors.email}</div>
+                )}
               </div>
               <div className="col-md-6">
                 <label htmlFor="phone" className="form-label">
@@ -150,8 +175,12 @@ export default function Contact({handleSubmitForm,formData, updateFormData,}: Co
                   value={formData.phone}
                   onChange={onChangeField}
                   required
+                  style={{ border: errors.phone ? "2px solid #840c0c" : "" }}
                 />
-                <div className="invalid-feedback">Field is required.</div>
+                { errors.phone && (
+                  <div className="inputInvalid">{errors.phone}</div>
+                )}
+                
               </div>
               <div className="col-md-6">
                 <label htmlFor="service" className="form-label">
@@ -161,21 +190,18 @@ export default function Contact({handleSubmitForm,formData, updateFormData,}: Co
                   id="service"
                   className="form-select"
                   aria-label="Services"
-                  value={formData.services}
+                  value={formData.service}
                   onChange={onChangeField}
+                  style={{ border: errors.service? "2px solid #840c0c" : "" }}
                 >
                   <option value="0">Please select an option</option>
                   <option value="Yard Work">Yard Work</option>
                   <option value="Garden Maintenance">Garden Maintenance</option>
-                  <option value="Garden Cleanups">Garden Cleanups</option>
-                  <option value="Sod Installation">Sod Installation</option>
-                  <option value="Retaining Walls and Patios">
-                    Retaining Walls & Patios
-                  </option>
-                  <option value="Seasonal garden clean-up">
-                    Seasonal garden clean-up
-                  </option>
-                  <option value="Custom Garden Care">Custom Garden Care</option>
+                  <option value="3">Garden Cleanups</option>
+                  <option value="4">Sod Installation</option>
+                  <option value="5">Retaining Walls & Patios</option>
+                  <option value="6"> Seasonal garden clean-up</option>
+                  <option value="7">Custom Garden Care</option>
                 </select>
               </div>
               <div className="col-12">
@@ -189,8 +215,11 @@ export default function Contact({handleSubmitForm,formData, updateFormData,}: Co
                   value={formData.message}
                   onChange={onChangeField}
                   required
+                  style={{ border: errors.message ? "2px solid #840c0c" : "" }}
                 />
-                <div className="invalid-feedback">Field is required.</div>
+                {errors.message && (
+                  <div className="inputInvalid">{errors.message}</div>
+                )}
               </div>
 
               <div className="col-12 flex justify-content-center">
