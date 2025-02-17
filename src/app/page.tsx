@@ -1,17 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 /* eslint-disable @next/next/no-img-element */
 
 'use client'
 
-import { useState } from "react";
-import About from "./about";
-import Contact from "./contact";
-import Services from "./services";
-import * as React from 'react';
-import Footer from "./footer";
-//import Reviews from "./reviews";
+
 import {motion} from 'framer-motion';
-import Link from 'next/link'
+import Link from "next/link";
+
  
 export interface FormDataType {
   firstName: string;
@@ -22,146 +17,65 @@ export interface FormDataType {
   message: string;
 };
 
+const services = [
+  {
+    title: "Yard Work (On-Demand)",
+    description:
+      "Flexible, on-demand services for various garden and yard maintenance needs.",
+  },
+  {
+    title: "Mulch, Soil & Compost Installation",
+    description:
+      "Professional installation of mulch, triple mix soil, and compost to enhance garden beds.",
+  },
+  {
+    title: "Garden Installation Projects",
+    description:
+      "Full-service garden design and installation for creating beautiful, functional outdoor spaces.",
+  },
+  {
+    title: "Retaining Walls & Patios",
+    description:
+      "Professional installation of patios and retaining walls to add structure and style to your landscape.",
+  },
+  {
+    title: "Sod Installation",
+    description:
+      "Proven sod installation services to create new lawns or replace existing ones.",
+  },
+  {
+    title: "Spring & Fall Clean-Ups",
+    description:
+      "Seasonal garden clean-up services to prepare your yard for spring growth or get it ready for winter.",
+  },
+  {
+    title: "Sales & Installation of Mulch, River Rock, and Soil",
+    description:
+      "Supply and installation of high-quality mulch, river rock, and soil for landscaping projects.",
+  },
+  {
+    title: "Overseeding & Top Dressing Services",
+    description:
+      "Lawn repair services, including overseeding and top dressing, to maintain a healthy, vibrant lawn.",
+  },
+];
+
+
 
 export default function Home() {
 
-  const [nav, setNav] = useState("0");
-  const [formData, setFormData] = useState<FormDataType>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    service: "0",
-    message: "",
-  });
-  const [fieldError, setFieldError] = useState([])
- 
-  const handleClick = (event: any) => {
-    setNav(event.target.id)
-  }
-
-  const updateFormData = (field:any, value:any) => {
-    
-    setFormData({ ...formData, [field]: value });
-  };
-
-  const onSubmitForm = (values: any) => {
-
-    const mailtoLink = `mailto:gabrielamorenor@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
-    if (!values || Object.keys(values).length === 0) {
-      window.location.href = mailtoLink;
-      console.log('Form submitted:', formData);
-      
-    } else {
-      setFieldError(values)
-    }
+  
    
-  }
-
-  // const getHamburgerMenu = () => {
-
-  // }
-
-    const services = [
-      {
-        title: "Yard Work (On-Demand)",
-        description:
-          "Flexible, on-demand services for various garden and yard maintenance needs.",
-      },
-      {
-        title: "Mulch, Soil & Compost Installation",
-        description:
-          "Professional installation of mulch, triple mix soil, and compost to enhance garden beds.",
-      },
-      {
-        title: "Garden Installation Projects",
-        description:
-          "Full-service garden design and installation for creating beautiful, functional outdoor spaces.",
-      },
-      {
-        title: "Retaining Walls & Patios",
-        description:
-          "Professional installation of patios and retaining walls to add structure and style to your landscape.",
-      },
-      {
-        title: "Sod Installation",
-        description:
-          "Proven sod installation services to create new lawns or replace existing ones.",
-      },
-      {
-        title: "Spring & Fall Clean-Ups",
-        description:
-          "Seasonal garden clean-up services to prepare your yard for spring growth or get it ready for winter.",
-      },
-      {
-        title: "Sales & Installation of Mulch, River Rock, and Soil",
-        description:
-          "Supply and installation of high-quality mulch, river rock, and soil for landscaping projects.",
-      },
-      {
-        title: "Overseeding & Top Dressing Services",
-        description:
-          "Lawn repair services, including overseeding and top dressing, to maintain a healthy, vibrant lawn.",
-      },
-    ];
-
   return (
     <>    
     
     <div className="w-100 vh-100 bg-white" >
       <main>
-        <nav className={`navbar navbar-expand-lg ${nav !== '0' ? "border-bottom" : ""}`} role="navigation">
-          <div className="container-fluid navbarTabs d-flex">
-            <a className="navbar-brand" href="#home">
-              <img src="/logo3.png" width="150px" alt="logo" />
-            </a>
-            <button 
-              className="navbar-toggler" 
-              type="button" 
-              data-bs-toggle="button" 
-              data-bs-target="#navbarNavDropdown" 
-              aria-controls="navbarNavDropdown" 
-              aria-expanded= "false"
-              aria-label="Toggle navigation"
-              >
-              <span className="navbar-toggler-icon" id="toggler"></span>
-            </button>
-            <div className="navbar-collapse" id="navbarNavDropdown">
-              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <Link id={'0'} className="nav-link" href="/home" onClick={handleClick}></Link>
-
-                  <a id={'0'} className="nav-link" href="#home" onClick={handleClick}>Home</a>
-                </li>
-                <li className="nav-item">
-                  <a id={'1'} className="nav-link" href="#about" onClick={handleClick}>About us</a>
-                </li>
-                <li className="nav-item"> 
-                  <a id={'2'} className="nav-link" href="#services" onClick={handleClick}>Services</a>
-                </li>
-                <li className="nav-item nav-pills">
-                  <a id={'3'} className="nav-link" href="#contact" style={{ backgroundColor: '#5C7285', color: 'white' }} onClick={handleClick}>Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <div className="container mt-3">
-       </div>
-
-       
         <div className="w-100 bg-white mb-5">
-
-          {nav === "0" && (
             <>
             <div className="background-div">
               <h2 className="h2 text" style={{background: '#E2E0C8'}}>Now Booking: Spring, Summer, & Fall 2025!</h2>
             </div>
-
-            {/* <div className="container mt-3">
-               <p className="fs-2">Secure your spot for the 2025 season!</p>
-               <p className="fs-4" >Offering weekly, biweekly, and monthly lawn care, gardening, and plantings.</p>
-            </div> */}
             <section className="px-6 py-12 container mt-5 mb-5">
               <h2 className="mb-5 display-4 text-center">Our Services</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -179,7 +93,7 @@ export default function Home() {
                 ))}
               </div>
               <div className="container mt-5 mb-5 text-center">
-                <a  href="#contact" onClick={handleClick}  >
+                <Link  href="/contact"   >
                   <motion.button
                     id={'3'}
                     whileHover={{
@@ -192,7 +106,7 @@ export default function Home() {
                   >
                     Get a quote
                   </motion.button>
-                </a>
+                </Link>
               </div>
             </section>
 
@@ -240,28 +154,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* <section>
-                <Reviews/>
-            </section> */}
             </>
-          )}
-
-          { nav === "1" && (
-            <About/> 
-          ) }
-
-          { nav === "2" && (
-            <Services/> 
-          ) }
-
-          { nav === "3" && (
-
-            <Contact handleSubmitForm = {onSubmitForm} formData={formData} updateFormData={updateFormData} errors={fieldError}/>
-          )}
-        </div>
-        <div className="mt-5">
-          <Footer handleNavClick={handleClick}/>
         </div>
       </main>
     </div>

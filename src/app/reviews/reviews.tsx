@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Reviews() {

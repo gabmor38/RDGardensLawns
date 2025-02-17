@@ -1,20 +1,42 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+'use client'
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FormDataType } from "./page";
+import { FormDataType } from "../page";
+import { useState } from "react";
 
-interface ContactProps {
-  handleSubmitForm: (value: any) => void;
-  formData: FormDataType;
-  updateFormData: (field: any, value: any) => void;
-  errors: any;
-}
+// interface ContactProps {
+//   handleSubmitForm: (value: any) => void;
+//   formData: FormDataType;
+//   updateFormData: (field: any, value: any) => void;
+//   errors: any;
+// }
 
-export default function Contact({handleSubmitForm,formData, errors, updateFormData,}: ContactProps) {
+export default function Contact( ) {
+
+
+    const [formData, setFormData] = useState<FormDataType>({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        service: "0",
+        message: "",
+      });
+
+    const [fieldError, setFieldError] = useState<Record<string, string>>({});
+
+    console.log("FormData", formData)
+   // console.log("errors", fieldError)
+    
 
   const onChangeField = (e: any): void => {
-    updateFormData(e.target.id, e.target.value);
+    const field = e.target.id;
+    const fieldValue = e.target.value;
+    setFormData({ ...formData, [field]: fieldValue });
+   // updateFormData(e.target.id, e.target.value);
   };
 
   const validateSubmitForm = (e: any):void => {
@@ -29,6 +51,9 @@ export default function Contact({handleSubmitForm,formData, errors, updateFormDa
        if (value.trim() === "") {
         fieldErrors[key] = "Required field"
        }
+       else if(key === 'service' && value === '0') {
+        fieldErrors[key] = "Please select an option"
+       }
       else if (key === "phone" && !phonePattern.test(value)) {
         fieldErrors[key] = "Enter a valid phone number"
        }
@@ -37,10 +62,26 @@ export default function Contact({handleSubmitForm,formData, errors, updateFormDa
        } 
 
     });
+    
 
-    handleSubmitForm(fieldErrors)
+    onSubmitForm(fieldErrors)
   }
 
+
+  const onSubmitForm = (values: any) => {
+
+    const mailtoLink = `mailto:gabrielamorenor@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
+    if (!values || Object.keys(values).length === 0) {
+      window.location.href = mailtoLink;
+      console.log('Form submitted:', formData);
+      
+    } else {
+      setFieldError(values)
+    }
+   
+  }
+
+  console.log("fieldErrors", fieldError.firstName)
   return (
     <div id="contact" className="mt-5 flex flex-column">
       <div className="mx-auto p-2">
@@ -121,10 +162,10 @@ export default function Contact({handleSubmitForm,formData, errors, updateFormDa
                   value={formData.firstName}
                   onChange={onChangeField}
                   required
-                  style={{ border: errors.firstName ? "2px solid #840c0c" : "" }}
+                  style={{ border: fieldError.firstName ? "2px solid #840c0c" : "" }}
                 />
-                {errors.firstName && (
-                  <div className="inputInvalid" >{errors.firstName}</div>
+                {fieldError.firstName && (
+                  <div className="inputInvalid" >{fieldError.firstName}</div>
                 )}
               </div>
               <div className="col-md-6">
@@ -138,10 +179,10 @@ export default function Contact({handleSubmitForm,formData, errors, updateFormDa
                   value={formData.lastName}
                   onChange={onChangeField}
                   required
-                  style={{ border: errors.lastName? "2px solid #840c0c" : "" }}
+                  style={{ border: fieldError.lastName? "2px solid #840c0c" : "" }}
                 />
-                {errors.lastName  && (
-                  <div className="inputInvalid">{errors.lastName}</div>
+                {fieldError.lastName  && (
+                  <div className="inputInvalid">{fieldError.lastName}</div>
                 )}
               </div>
               <div className="col-12">
@@ -156,10 +197,10 @@ export default function Contact({handleSubmitForm,formData, errors, updateFormDa
                   value={formData.email}
                   onChange={onChangeField}
                   required
-                  style={{ border: errors.email ? "2px solid #840c0c" : "" }}
+                  style={{ border: fieldError.email ? "2px solid #840c0c" : "" }}
                 />
-                { errors.email && (
-                  <div className="inputInvalid">{errors.email}</div>
+                { fieldError.email && (
+                  <div className="inputInvalid">{fieldError.email}</div>
                 )}
               </div>
               <div className="col-md-6">
@@ -175,13 +216,13 @@ export default function Contact({handleSubmitForm,formData, errors, updateFormDa
                   value={formData.phone}
                   onChange={onChangeField}
                   required
-                  style={{ border: errors.phone ? "2px solid #840c0c" : "" }}
+                  style={{ border: fieldError.phone ? "2px solid #840c0c" : "" }}
                 />
-                { errors.phone && (
-                  <div className="inputInvalid">{errors.phone}</div>
+                { fieldError.phone && (
+                  <div className="inputInvalid">{fieldError.phone}</div>
                 )}
                 
-              </div>
+              </div> 
               <div className="col-md-6">
                 <label htmlFor="service" className="form-label">
                   Service
@@ -192,7 +233,7 @@ export default function Contact({handleSubmitForm,formData, errors, updateFormDa
                   aria-label="Services"
                   value={formData.service}
                   onChange={onChangeField}
-                  style={{ border: errors.service? "2px solid #840c0c" : "" }}
+                  style={{ border: fieldError.service? "2px solid #840c0c" : "" }}
                 >
                   <option value="0">Please select an option</option>
                   <option value="Yard Work">Yard Work</option>
@@ -215,13 +256,13 @@ export default function Contact({handleSubmitForm,formData, errors, updateFormDa
                   value={formData.message}
                   onChange={onChangeField}
                   required
-                  style={{ border: errors.message ? "2px solid #840c0c" : "" }}
+                  style={{ border: fieldError.message ? "2px solid #840c0c" : "" }}
                 />
-                {errors.message && (
-                  <div className="inputInvalid">{errors.message}</div>
+                {fieldError.message && (
+                  <div className="inputInvalid">{fieldError.message}</div>
                 )}
               </div>
-
+{/* 
               <div className="col-12 flex justify-content-center">
                 <div className="form-check">
                   <input
@@ -233,7 +274,7 @@ export default function Contact({handleSubmitForm,formData, errors, updateFormDa
                     Check me out
                   </label>
                 </div>
-              </div>
+              </div> */}
               <div className="col-12">
                 <button
                   type="submit"

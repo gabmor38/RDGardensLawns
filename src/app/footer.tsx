@@ -3,39 +3,40 @@
 'use client'
  
 import "bootstrap/dist/css/bootstrap.min.css";
+import Link from "next/link";
 import React from "react";
 
-interface FooterProps {
-    handleNavClick:(value: string) => void
-  }
+// interface FooterProps {
+//     handleNavClick:(value: string) => void
+//   }
 
-export default function Footer({ handleNavClick }: FooterProps) {
+export default function Footer() {
 
-    const handleValueChange = (event: any) => {
-       handleNavClick(event)
-    }
+    // const handleValueChange = (event: any) => {
+    //    handleNavClick(event)
+    // }
 
 
 
     const categories = [
         {
           name: 'Home',
-          href: '#home',
+          href: '/',
           id: '0',
         },
         {
           name: 'About',
-          href: '#about',
+          href: '/about',
           id: '1',
         },
         {
           name: 'Services',
-          href: '#services',
+          href: '/services',
           id: '2',
         },
         {
           name: 'Contact',
-          href: '#contact',
+          href: '/contact',
           id: '3',
         },
       ];;
@@ -61,9 +62,12 @@ export default function Footer({ handleNavClick }: FooterProps) {
                     {categories.map(category => {
                       return (
                         <li key={category.id}>
-                          <a id={category.id} href={category.href} className='nav-link text-light' onClick={handleValueChange} style={{textDecoration: 'none'}}>
+                          <Link href={category.href} className="nav-link text-light" style={{ textDecoration: 'none' }}>
                             {category.name}
-                          </a>
+                          </Link>
+                          {/* <a id={category.id} href={category.href} className='nav-link text-light' onClick={handleValueChange} style={{textDecoration: 'none'}}>
+                            {category.name}
+                          </a> */}
                         </li>
                       );
                     })}
