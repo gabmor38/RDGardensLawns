@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RD SoftScape Landscaping",
-  description: "",
+  title: "RD Softscape Landscaping | Professional Softscaping & Lawn Care",
+  description: "Transform your outdoor space with expert softscaping, garden design, and lawn care services.",
   icons: {
     icon: [
       {
