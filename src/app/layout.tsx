@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
-//import { Geist, Geist_Mono } from "next/font/google";
+//import { Geist, Geist_Mono} from "next/font/google";
+import {  Roboto } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./footer";
@@ -15,6 +16,12 @@ import Navbar from "./navbar";
 //   variable: "--font-geist-mono",
 //   subsets: ["latin"],
 // });
+
+const roboto = Roboto({
+  variable: "--font-roboto-normal",
+  subsets: ["latin"],
+  weight: "400"
+})
 
 export const metadata: Metadata = {
   title: "RD Softscape Landscaping | Professional Softscaping & Lawn Care",
@@ -37,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-       // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${roboto.variable} antialiased`}
       >
         <Navbar/>
         {children}
