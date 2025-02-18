@@ -6,6 +6,8 @@
 
 import {motion} from 'framer-motion';
 import Link from "next/link";
+import Reviews from './reviews/reviews';
+
 
  
 export interface FormDataType {
@@ -77,7 +79,7 @@ export default function Home() {
               <h2 className="h2 text-center p-3" style={{background: '#E2E0C8'}}>Now Booking: Spring, Summer, & Fall 2025!</h2>
             </div>
             <section className="px-6 py-12 container mt-5 mb-5">
-              <h2 className="mb-5 display-4 text-center">Our Services</h2>
+              <h2 className="mb-5 display-4 text-center text-drop-shadow">Our Services</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {services.map((service, index) => (
                     <motion.div
@@ -110,24 +112,24 @@ export default function Home() {
               </div>
             </section>
 
-            <div className="container mt-5 mb-5">
-              <h2 className="display-4 mb-5 text-center">Explore our Projects </h2>
+            <section className="container mt-5 mb-5">
+              <h2 className="display-4 mb-5 text-center text-drop-shadow ">Explore our Projects </h2>
               <div className="row row-cols-1 row-cols-md-2 g-4 clearfix mb-5" style={{borderTop: '1px solid #818C78', paddingBottom: '50px'}}>
                 <div className="col">
-                  <div className="card border-white">
-                    <img src="/pic2.png" className="card-img-top img-fluid" alt="garden" style={{borderRadius: '20px'}}/>
+                  <div className="card border-white ">
+                    <img src="/pic2.png" className="card-img-top img-fluid" alt="Zen garden" style={{borderRadius: '20px'}}/>
                   </div>
                 </div>
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic3.png" className="card-img-top img-fluid" alt="shrubs" style={{borderRadius: '20px'}}/>
+                    <img src="/pic3.png" className="card-img-top img-fluid" alt="entryway garden" style={{borderRadius: '20px'}}/>
                    
                   </div>
                 </div>
                 
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic4.png" className="card-img-top img-fluid" alt="lawn" style={{borderRadius: '20px'}}/>
+                    <img src="/pic4.png" className="card-img-top img-fluid" alt="new sod installation" style={{borderRadius: '20px'}}/>
                     
                   </div>
                 </div>
@@ -148,12 +150,11 @@ export default function Home() {
                     <img src="/pic6.png " className="card-img-top " width="600px" height="300" alt="sloped flower bed" style={{borderRadius: '20px'}}/>
                   </div>
                 </div>
-                <div className="col">
-                  <div className="card border-white">
-                  </div>
-                </div>
               </div>
-            </div>
+            </section>
+            <section>
+              <Reviews/>
+            </section>
             </>
         </div>
       </main>

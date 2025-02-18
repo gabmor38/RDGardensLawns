@@ -7,12 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormDataType } from "../page";
 import { useState } from "react";
 
-// interface ContactProps {
-//   handleSubmitForm: (value: any) => void;
-//   formData: FormDataType;
-//   updateFormData: (field: any, value: any) => void;
-//   errors: any;
-// }
 
 export default function Contact( ) {
 
@@ -29,14 +23,13 @@ export default function Contact( ) {
     const [fieldError, setFieldError] = useState<Record<string, string>>({});
 
     console.log("FormData", formData)
-   // console.log("errors", fieldError)
-    
+
 
   const onChangeField = (e: any): void => {
     const field = e.target.id;
     const fieldValue = e.target.value;
     setFormData({ ...formData, [field]: fieldValue });
-   // updateFormData(e.target.id, e.target.value);
+
   };
 
   const validateSubmitForm = (e: any):void => {
@@ -81,7 +74,6 @@ export default function Contact( ) {
    
   }
 
-  console.log("fieldErrors", fieldError.firstName)
   return (
     <div id="contact" className="mt-5 flex flex-column">
       <div className="mx-auto p-2">

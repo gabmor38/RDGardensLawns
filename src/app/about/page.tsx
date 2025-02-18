@@ -9,7 +9,11 @@ export default function About() {
       style={{ alignItems: "center" }}
     >
       <div className="mx-auto p-2 ">
-        <h2 className="mx-auto p-2 h1">Our Story</h2>
+        <h1 className="mx-auto p-2 h1">Our Story</h1>
+      </div>
+     
+      <div className="mx-auto p-2 ">
+        <h2 className="h2" style={{color: 'olive'}}>Over 30 Years of Landscaping Excellence</h2>
       </div>
 
       <div className="card mb-5" style={{ border: "none", padding: "20px" }}>
@@ -18,7 +22,7 @@ export default function About() {
             <img
               src="/pond.png"
               className="img-fluid rounded-start"
-              alt="pond"
+              alt="Garden Retreat with Pond"
               style={{ marginLeft: "30px", marginTop: "50px" }}
             />
           </div>
@@ -28,27 +32,18 @@ export default function About() {
               style={{ marginLeft: "70px", textAlign: "justify" }}
             >
               <p className="fs-4">
-                <strong>Richard D Softscape & Landscaping</strong> was built
-                from a passion for transforming outdoor spaces. With{" "}
-                <strong>30+ years of experience</strong>, I’ve worked on major
-                projects, including contracts for <strong>NNC Ottawa</strong>{" "}
-                and <strong>DND headquarters</strong> on Carling Avenue.
+                At <strong>Richard D Softscape & Landscaping</strong>, we bring over 30 years of expertise in transforming outdoor spaces with precision and care. 
+                Our experience includes major projects for NNC Ottawa and the DND headquarters on Carling Avenue, showcasing our ability to deliver high-quality landscaping solutions on a large scale.
               </p>
 
               <p className="fs-4">
-                What started as a part-time passion{" "}
-                <strong>15 years ago</strong> has grown into a trusted
-                landscaping service, backed by a{" "}
-                <strong>skilled, dedicated team</strong> committed to quality
-                and excellence. Now, I’m taking the next step—running the
-                business <strong>full-time</strong> to better serve our clients.
+              What began as a part-time passion 15 years ago has flourished into a trusted, full-service landscaping business. 
+              Backed by a skilled and dedicated team, we are committed to providing exceptional craftsmanship and outstanding customer service.
               </p>
 
               <p className="fs-4">
-                We specialize in <strong>residential and commercial landscaping solutions</strong>{" "}
-                tailored to your unique needs. Whether it&apos;s routine maintenance
-                or a full garden transformation, we’re here to bring your vision
-                to life.
+              We specialize in <strong>residential and commercial landscaping</strong>, offering tailored solutions to enhance your outdoor spaces. 
+              Whether you need routine maintenance or a complete landscape transformation, we are here to bring your vision to life with professionalism and expertise.
               </p>
             </div>
           </div>

@@ -6,16 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 import React from "react";
 
-// interface FooterProps {
-//     handleNavClick:(value: string) => void
-//   }
 
 export default function Footer() {
-
-    // const handleValueChange = (event: any) => {
-    //    handleNavClick(event)
-    // }
-
 
 
     const categories = [
@@ -65,9 +57,6 @@ export default function Footer() {
                           <Link href={category.href} className="nav-link text-light" style={{ textDecoration: 'none' }}>
                             {category.name}
                           </Link>
-                          {/* <a id={category.id} href={category.href} className='nav-link text-light' onClick={handleValueChange} style={{textDecoration: 'none'}}>
-                            {category.name}
-                          </a> */}
                         </li>
                       );
                     })}

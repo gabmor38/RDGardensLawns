@@ -24,7 +24,7 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "RD Softscape Landscaping | Professional Softscaping & Lawn Care",
+  title: "Richard D Softscape Landscaping | Professional Softscaping & Lawn Care",
   description: "Transform your outdoor space with expert softscaping, garden design, and lawn care services.",
   icons: {
     icon: [
