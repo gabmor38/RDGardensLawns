@@ -4,7 +4,7 @@
  
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from 'next/navigation';
 
 
@@ -39,8 +39,10 @@ export default function Navbar() {
 
     const pathname = usePathname();
 
-   
-
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => {
+      setIsOpen(!isOpen);
+    };
       
   return (
     <nav className={`navbar navbar-expand-lg ${ pathname !== '/'? "border-bottom" : ""}`} role="navigation">
@@ -49,18 +51,19 @@ export default function Navbar() {
               <img src="/logo3.png" width="150px" alt="logo" />
             </a>
             <button 
-              className="navbar-toggler" 
+              className="navbar-toggler lg:hidden" 
               type="button" 
               data-bs-toggle="button" 
               data-bs-target="#navbarNavDropdown" 
               aria-controls="navbarNavDropdown" 
               aria-expanded= "false"
               aria-label="Toggle navigation"
+              onClick = {toggle}
               >
               <span className="navbar-toggler-icon" id="toggler"></span>
             </button>
             <div className="navbar-collapse " id="navbarNavDropdown">
-            <ul className='hidden md:flex gap-x-8 gap-y-4 ms-auto  align-items-center '>
+            <ul className='hidden lg:flex gap-x-8 gap-y-4 ms-auto  align-items-center '>
                 {categories.map(category => {
                     return (
                     <li key={category.id} className={`${category.className} `}>
