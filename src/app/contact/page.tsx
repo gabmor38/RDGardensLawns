@@ -63,7 +63,7 @@ export default function Contact( ) {
 
   const onSubmitForm = (values: any) => {
 
-    const mailtoLink = `mailto:gabrielamorenor@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
+    const mailtoLink = `mailto:rickdsoftscaping@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
     if (!values || Object.keys(values).length === 0) {
       window.location.href = mailtoLink;
       console.log('Form submitted:', formData);
