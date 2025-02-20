@@ -32,7 +32,7 @@ export default function About() {
               style={{ marginLeft: "70px", textAlign: "justify" }}
             >
               <p className="fs-4">
-                At <strong>Richard D Softscape & Landscaping</strong>, we bring over 30 years of expertise in transforming outdoor spaces with precision and care. 
+                At <strong>RDoucet Everterra Gardens & Lawn care</strong>, we bring over 30 years of expertise in transforming outdoor spaces with precision and care. 
                 Our experience includes major projects for NNC Ottawa and the DND headquarters on Carling Avenue, showcasing our ability to deliver high-quality landscaping solutions on a large scale.
               </p>
 
