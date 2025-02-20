@@ -16,7 +16,7 @@ export default function Reviews() {
         </div>
 
         <div className ="container text-center">
-        <div className="row row-cols-1 row-cols-md-3 g-5">
+        <div className="row row-cols-1 row-cols-xl-3 g-5">
         <div className="col">
           <div className="card dropShadow">
             <FontAwesomeIcon icon={faQuoteRight} size={'2xl'} className="mt-3"/>

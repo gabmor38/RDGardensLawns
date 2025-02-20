@@ -49,8 +49,8 @@ export default function Footer() {
                 <div className="col">
                   <p className="text-white">Copyright &copy; RD Softscape Landscaping 2025</p>
                 </div>
-                <div className="col col-lg-3">
-                  <ul className='hidden md:flex gap-x-8 gap-y-4'>
+                <div className="col col-lg-4">
+                  <ul className='hidden lg:flex gap-x-8 gap-y-4'>
                     {categories.map(category => {
                       return (
                         <li key={category.id}>
