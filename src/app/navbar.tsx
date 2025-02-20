@@ -40,7 +40,8 @@ export default function Navbar() {
     const pathname = usePathname();
 
     const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => {
+
+    const toggle = ():void => {
       setIsOpen(!isOpen);
     };
       
