@@ -71,9 +71,9 @@ export default function Home() {
   return (
     <>    
     
-    <div className="w-100 vh-100 bg-white" >
+    <div className="bg-white" >
       <main>
-        <div className="w-100 bg-white mb-5">
+        <div className="bg-white mb-5">
             <>
             <div className="background-div">
               <h2 className="h2 text-center p-3" style={{background: '#E2E0C8'}}>Now Booking: Spring, Summer, & Fall 2025!</h2>

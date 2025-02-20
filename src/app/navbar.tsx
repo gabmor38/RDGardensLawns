@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
  
 'use client'
@@ -41,7 +42,8 @@ export default function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = ():void => {
+    const toggle = (e: any):void => {
+      console.log(e)
       setIsOpen(!isOpen);
     };
       
