@@ -8,7 +8,7 @@ export default function Reviews() {
   return (
     <div
         id="reviews"
-        className="mt-5 flex flex-column vh-100"
+        className="mt-5 pb-5 flex flex-column vh-100"
         style={{ alignItems: "center"}}
     >
         <div className="mx-auto p-2 ">
