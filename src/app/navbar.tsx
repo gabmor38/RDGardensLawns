@@ -7,6 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from 'next/navigation';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 
 const categories = [
@@ -42,10 +45,23 @@ export default function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = (e: any):void => {
-      console.log(e)
+    const toggle = ():void => {
+
       setIsOpen(!isOpen);
+       const getNavBar = document.getElementById('navbarNavDropdown')?.children[0];
+
+      if (getNavBar) {
+        console.log("nav",getNavBar)
+        getNavBar.classList.remove('hidden')
+      } 
+
+      if(!isOpen) {
+        getNavBar?.classList.add('hidden')
+      }
+
+    
     };
+    console.log(isOpen)
       
   return (
     <nav className={`navbar navbar-expand-lg ${ pathname !== '/'? "border-bottom" : ""}`} role="navigation">
@@ -63,9 +79,10 @@ export default function Navbar() {
               aria-label="Toggle navigation"
               onClick = {toggle}
               >
-              <span className="navbar-toggler-icon" id="toggler"></span>
+              <span>{!isOpen ? <FontAwesomeIcon icon={faBars}/> : <FontAwesomeIcon icon={faClose}/>}</span>
             </button>
             <div className="navbar-collapse " id="navbarNavDropdown">
+
             <ul className='hidden lg:flex gap-x-8 gap-y-4 ms-auto  align-items-center '>
                 {categories.map(category => {
                     return (
@@ -76,7 +93,7 @@ export default function Navbar() {
                     </li>
                     );
                 })}
-                </ul>
+              </ul>
             </div>
           </div>
         </nav>
