@@ -46,25 +46,6 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen((prev) => !prev);
-
-    // const toggle = ():void => {
-
-    //   setIsOpen(!isOpen);
-
-    //    const getNavBar = document.getElementById('navbarNavDropdown')?.children[0];
-
-    //   if (getNavBar) {
-    //     console.log("nav",getNavBar)
-    //     getNavBar.classList.remove('hidden')
-    //   } 
-
-    //   if(!isOpen) {
-    //     getNavBar?.classList.add('hidden')
-    //   }
-
-    
-    // };
-    // console.log(isOpen)
       
   return (
     <nav className={`navbar navbar-expand-lg ${ pathname !== '/'? "border-bottom" : ""}`} role="navigation">
