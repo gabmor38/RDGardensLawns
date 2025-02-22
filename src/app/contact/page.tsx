@@ -145,7 +145,7 @@ export default function Contact( ) {
             <form className="row g-3 " >
               <div className="col-md-6">
                 <label htmlFor="firstName" className="form-label">
-                  First Name
+                 <span className="text-danger">*</span> First Name 
                 </label>
                 <input
                   type="text"
@@ -162,7 +162,7 @@ export default function Contact( ) {
               </div>
               <div className="col-md-6">
                 <label htmlFor="lastName" className="form-label">
-                  Last Name
+                <span className="text-danger">*</span>Last Name
                 </label>
                 <input
                   type="text"
@@ -179,7 +179,7 @@ export default function Contact( ) {
               </div>
               <div className="col-12">
                 <label htmlFor="email" className="form-label">
-                  Email
+                <span className="text-danger">*</span>Email
                 </label>
                 <input
                   type="email"
@@ -197,7 +197,7 @@ export default function Contact( ) {
               </div>
               <div className="col-md-6">
                 <label htmlFor="phone" className="form-label">
-                  Phone
+                <span className="text-danger">*</span>Phone
                 </label>
                 <input
                   type="tel"
@@ -239,7 +239,7 @@ export default function Contact( ) {
               </div>
               <div className="col-12">
                 <label htmlFor="message" className="form-label">
-                  Message
+                <span className="text-danger">*</span>Message
                 </label>
                 <textarea
                   className="form-control"
