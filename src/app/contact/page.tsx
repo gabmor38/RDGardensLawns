@@ -6,6 +6,8 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormDataType } from "../page";
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 
 export default function Contact( ) {
@@ -21,16 +23,23 @@ export default function Contact( ) {
       });
 
     const [fieldError, setFieldError] = useState<Record<string, string>>({});
+    const [captchaToken, setCaptchaToken] = useState(null);
+
+    const handleCaptcha = (token:any) => setCaptchaToken(token);
+
 
     console.log("FormData", formData)
+    
 
 
-  const onChangeField = (e: any): void => {
-    const field = e.target.id;
-    const fieldValue = e.target.value;
-    setFormData({ ...formData, [field]: fieldValue });
+    const onChangeField = (e: any): void => {
+      const field = e.target.id;
+      const fieldValue = e.target.value;
+      setFormData({ ...formData, [field]: fieldValue });
 
-  };
+    };
+
+    
 
   const validateSubmitForm = (e: any):void => {
     e.preventDefault();
@@ -60,19 +69,44 @@ export default function Contact( ) {
     onSubmitForm(fieldErrors)
   }
 
+  const onSubmitForm = async (values:any) => {
+    if (!captchaToken) {
+      alert("Please complete the CAPTCHA");
+      return;
+    }
 
-  const onSubmitForm = (values: any) => {
-
-    const mailtoLink = `mailto:rickdsoftscaping@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
     if (!values || Object.keys(values).length === 0) {
-      window.location.href = mailtoLink;
-      console.log('Form submitted:', formData);
-      
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, captchaToken }),
+      });
+      if (response.ok) {
+        alert("Message sent successfully!");
+        
+  
+      } else {
+        alert("Failed to send message.");
+      }
     } else {
       setFieldError(values)
     }
+ 
+  };
+
+
+  // const onSubmitForm = (values: any) => {
+
+  //   const mailtoLink = `mailto:rickdsoftscaping@gmail.com?subject=Service Request from ${formData.firstName} ${formData.lastName}&body=Message: ${formData.message}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}`;
+  //   if (!values || Object.keys(values).length === 0) {
+  //     window.location.href = mailtoLink;
+  //     console.log('Form submitted:', formData);
+      
+  //   } else {
+  //     setFieldError(values)
+  //   }
    
-  }
+  // }
 
   return (
     <div id="contact" className="mt-5 flex flex-column">
@@ -253,6 +287,12 @@ export default function Contact( ) {
                 {fieldError.message && (
                   <div className="inputInvalid">{fieldError.message}</div>
                 )}
+              </div>
+              <div>
+                <ReCAPTCHA
+                   sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
+                  onChange={handleCaptcha}
+                />,
               </div>
 {/* 
               <div className="col-12 flex justify-content-center">
