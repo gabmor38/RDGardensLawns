@@ -1,5 +1,7 @@
 
-const nodemailer = require('nodemailer');
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import nodemailer from 'nodemailer';
 
 export async function POST(req:any) {
   const { name, email, message, captchaToken } = await req.json();
