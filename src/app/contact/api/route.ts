@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 
 
-export async function POST(request: Request, response: Response) {
+export async function POST(request: Request) {
   debugger
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
 
