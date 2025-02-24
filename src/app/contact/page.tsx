@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormDataType } from "../page";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 
@@ -27,7 +27,6 @@ export default function Contact( ) {
 
     const [fieldError, setFieldError] = useState<Record<string, string>>({});
     const [captchaToken, setCaptchaToken] = useState(null);
-    const [apiResponse, setApiResponse] = useState(0);
     
 
     const handleCaptcha = (token:any) => setCaptchaToken(token);
