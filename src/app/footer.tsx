@@ -47,7 +47,7 @@ export default function Footer() {
 
                 </div>
                 <div className="col">
-                  <p className="text-white">Copyright &copy; RD Softscape Landscaping 2025</p>
+                  <p className="text-white">Copyright &copy; RDoucet Everterra Gardens & Lawn care 2025</p>
                 </div>
                 <div className="col col-lg-4">
                   <ul className='hidden lg:flex gap-x-8 gap-y-4'>
