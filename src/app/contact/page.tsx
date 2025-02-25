@@ -124,7 +124,7 @@ export default function Contact( ) {
   return (
     <div id="contact" className="mt-5 flex flex-column">
       <div className="mx-auto p-2">
-        <h2 className="mx-auto p-2 mb-5">Get in touch with us</h2>
+        <h2 className="mx-auto p-2 mb-5 h2">Get in touch with us</h2>
       </div>
 
       <div className="container text-center mb-5">

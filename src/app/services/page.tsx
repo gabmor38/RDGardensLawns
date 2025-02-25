@@ -7,11 +7,11 @@ export default function Services() {
     <div id="services" className="mt-5 mb-5" style={{display: 'flex', flexDirection: 'column'}}>
 
         <div className="mx-auto p-2 flex flex-column">
-          <h2 className="text-2xl text-center font-bold">Residential and Commercial Landscaping Services</h2>
+          <h2 className="text-2xl text-center h2 mb-5">Residential and Commercial Landscaping Services</h2>
         </div>
 
         <div className="container text-center">
-          <div className="row row-cols-1 row-cols-sm-3 g-4">
+          <div className="row row-cols-1 row-cols-lg-3 g-4">
             <div className="col">
               <div className="card h-100">
                 <img src="/pic1.png" className="card-img-top card-img-fixed" alt="Mulched stone garden"/>
