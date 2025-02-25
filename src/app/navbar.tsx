@@ -50,7 +50,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar navbar-expand-lg ${ pathname !== '/'? "border-bottom" : ""}`} role="navigation">
           <div className="container-fluid navbarTabs d-flex">
-            <a className="navbar-brand" href="#home">
+            <a className="navbar-brand" href="/">
               <img src="/logo3.png" width="150px" alt="logo" />
             </a>
 
