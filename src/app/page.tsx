@@ -7,9 +7,14 @@
 import {motion} from 'framer-motion';
 import Link from "next/link";
 import Reviews from './reviews/reviews';
+import Image from 'next/image';
+import pic1 from '../../public/pic1.png';
+import pic2 from '../../public/pic2.png';
+import pic3 from '../../public/pic3.png';
+import pic4 from '../../public/pic4.jpg';
+import pic5 from '../../public/pic5b.jpg';
+import pic6 from '../../public/pic6b.jpg';
 
-
- 
 export interface FormDataType {
   firstName: string;
   lastName: string;
@@ -117,37 +122,37 @@ export default function Home() {
               <div className="row row-cols-1 row-cols-md-2 g-4 clearfix mb-5" style={{borderTop: '1px solid #818C78', paddingBottom: '50px'}}>
                 <div className="col">
                   <div className="card border-white ">
-                    <img src="/pic2.png" className="card-img-top img-fluid" alt="Zen garden" style={{borderRadius: '20px'}}/>
+                    <Image src={pic2} className="card-img-top img-fluid" alt="Zen garden" style={{borderRadius: '20px'}}/>
                   </div>
                 </div>
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic3.png" className="card-img-top img-fluid" alt="entryway garden" style={{borderRadius: '20px'}}/>
+                    <Image src={pic3}className="card-img-top img-fluid" alt="entryway garden" style={{borderRadius: '20px'}}/>
                    
                   </div>
                 </div>
                 
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic4.png" className="card-img-top img-fluid" alt="new sod installation" style={{borderRadius: '20px'}}/>
+                    <Image src={pic4} className="card-img-top img-fluid" alt="new sod installation" style={{borderRadius: '20px'}}/>
                     
                   </div>
                 </div>
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic1.png" className="card-img-top" alt="graden" style={{borderRadius: '20px'}}/>
+                    <Image src={pic1} className="card-img-top" alt="graden" style={{borderRadius: '20px'}}/>
                     
                   </div>
                 </div>
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic5.png " className="card-img-top" alt="flower bed" width="600px" height="300" style={{borderRadius: '20px'}}/>
+                    <Image src={pic5} className="card-img-top" alt="flower bed" style={{borderRadius: '20px'}}/>
                   </div>
                   <div className="mb-5"></div>
                 </div>
                 <div className="col">
                   <div className="card border-white">
-                    <img src="/pic6.png " className="card-img-top " width="600px" height="300" alt="sloped flower bed" style={{borderRadius: '20px'}}/>
+                    <Image src={pic6} className="card-img-top " alt="sloped flower bed" style={{borderRadius: '20px'}}/>
                   </div>
                 </div>
               </div>

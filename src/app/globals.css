@@ -34,10 +34,6 @@ body {
 
 .navbarTabs {
 
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
-
   li {
     font-family: Roboto;
     font-weight: 500;
@@ -58,20 +54,6 @@ body {
   margin-left: 40px;
 }
 
-.contentWrapper {
-  height: 400px;
-  background-color: lightgreen;
-}
-
-.servicesContainer {
-  padding: 20px;
-  background-color: white;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-}
 
 a.nav-link {
   color: black;
@@ -93,21 +75,6 @@ a.nav-link {
   
 }
 
-.compName {
-  font-weight: bold;
-  font-size: 32px!important;
-  /* padding-right:100px!important; */
-  /*padding-left:100px!important;*/
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  background: rgba(0, 0, 0, 0.5); 
-  padding: 20px 30px;
-  text-align: center;
-}
 
 footer{
  
