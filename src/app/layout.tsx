@@ -8,15 +8,6 @@ import Footer from "./footer";
 import Navbar from "./navbar";
 import { GoogleAnalytics } from '@next/third-parties/google';
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 const roboto = Roboto({
   variable: "--font-roboto-normal",
@@ -25,7 +16,7 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "RD EverTerra Gardens & Lawn Care | Professional Softscaping & Lawn Care in Kemptville",
+  title: "RD EverTerra Gardens & Lawns | Professional Softscaping & Lawn Care in Kemptville",
   description: "Transform your outdoor space with expert softscaping, garden design, and lawn care services.",
   icons: {
     icon: [

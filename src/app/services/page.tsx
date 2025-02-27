@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import "bootstrap/dist/css/bootstrap.min.css";
 import pic1 from '../../../public/pic1.png'
-import pic2 from '../../../public/pic2.png'
+import pic2 from '../../../public/pic2a.jpg'
 import pic3 from '../../../public/pic3.png'
-import pic4 from '../../../public/pic4.png'
+import pic4 from '../../../public/pic4.jpg'
 import pic9 from '../../../public/pic9.png'
-import pic5 from '../../../public/pic5.png'
+import pic5 from '../../../public/pic5b.png'
 import Image from 'next/image'
 
 
