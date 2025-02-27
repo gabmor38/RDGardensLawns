@@ -6,6 +6,7 @@ import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./footer";
 import Navbar from "./navbar";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} antialiased`}
       >
+        <GoogleAnalytics gaId="G-906XENZS68" />
         <Navbar/>
         {children}
         <Footer/>
