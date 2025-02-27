@@ -1,6 +1,3 @@
-
-/* eslint-disable @next/next/no-img-element */
-
 'use client'
 
 
@@ -127,17 +124,16 @@ export default function Home() {
                 </div>
                 <div className="col">
                   <div className="card border-white">
-                    <Image src={pic3}className="card-img-top img-fluid" alt="entryway garden" style={{borderRadius: '20px'}}/>
-                   
-                  </div>
-                </div>
-                
-                <div className="col">
-                  <div className="card border-white">
                     <Image src={pic4} className="card-img-top img-fluid" alt="new sod installation" style={{borderRadius: '20px'}}/>
                     
                   </div>
                 </div>
+                <div className="col">
+                  <div className="card border-white">
+                    <Image src={pic3}className="card-img-top img-fluid" alt="entryway garden" style={{borderRadius: '20px'}}/>
+                  </div>
+                </div>
+                
                 <div className="col">
                   <div className="card border-white">
                     <Image src={pic1} className="card-img-top" alt="graden" style={{borderRadius: '20px'}}/>

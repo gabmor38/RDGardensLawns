@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import pic1 from '../../../public/pic1.png'
 import pic2 from '../../../public/pic2a.jpg'
