@@ -5,7 +5,7 @@ import pic2 from '../../../public/pic2a.jpg'
 import pic3 from '../../../public/pic3.png'
 import pic4 from '../../../public/pic4.jpg'
 import pic9 from '../../../public/pic9.png'
-import pic5 from '../../../public/pic5b.png'
+import pic5 from '../../../public/pic5b.jpg'
 import Image from 'next/image'
 
 
