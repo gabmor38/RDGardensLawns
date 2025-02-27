@@ -30,7 +30,7 @@ export default function About() {
       <div className="w-full md:w-2/3">
         <div className="card-body text-justify">
           <p className="text-lg">
-            At <strong>RDoucet Everterra Gardens & Lawn care</strong>, we bring over 30 years of expertise in transforming outdoor spaces with precision and care. 
+            At <strong>RD Everterra Gardens & Lawns</strong>, we bring over 30 years of expertise in transforming outdoor spaces with precision and care. 
             Our experience includes major projects for NNC Ottawa and the DND headquarters on Carling Avenue, showcasing our ability to deliver high-quality landscaping solutions on a large scale.
           </p>
 
