@@ -2,7 +2,7 @@
 'use client'
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { faEnvelope, faLandmark, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope,faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormDataType } from "../page";
 import {  useState } from "react";
