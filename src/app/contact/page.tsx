@@ -2,12 +2,13 @@
 'use client'
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLandmark, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormDataType } from "../page";
 import {  useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons/faLocationDot";
 
 
 
@@ -182,6 +183,32 @@ export default function Contact( ) {
                   <strong>Send an email</strong>
                 </p>
                 <p style={{ margin: "0px 10px" }}>rickdsoftscaping@gmail.com</p>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                width: "500px",
+                marginTop: "20px",
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faLocationDot}
+                style={{
+                  color: "white",
+                  width: "50px",
+                  height: "50px",
+                  borderRadius: "5px",
+                  backgroundColor: "#5C7285",
+                  padding: "10px",
+                }}
+              />
+              <div style={{ textAlign: "justify" }}>
+                <p style={{ fontSize: "18px", margin: "0px 10px" }}>
+                  <strong>Location</strong>
+                </p>
+                <p style={{ margin: "0px 10px" }}>Kemptville, ON</p>
               </div>
             </div>
           </div>
