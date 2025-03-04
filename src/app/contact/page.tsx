@@ -275,13 +275,13 @@ export default function Contact( ) {
                   style={{ border: fieldError.service? "2px solid #840c0c" : "" }}
                 >
                   <option value="0">Please select an option</option>
-                  <option value="Yard Work">Yard Work</option>
-                  <option value="Garden Maintenance">Garden Maintenance</option>
-                  <option value="3">Garden Cleanups</option>
-                  <option value="4">Sod Installation</option>
-                  <option value="5">Retaining Walls & Patios</option>
-                  <option value="6"> Seasonal garden clean-up</option>
-                  <option value="7">Custom Garden Care</option>
+                  <option value="Yard work">Yard Work</option>
+                  <option value="Garden maintenance">Garden Maintenance</option>
+                  <option value="Garden cleanups">Garden Cleanups</option>
+                  <option value="Sod installation">Sod Installation</option>
+                  <option value="Retaining walls and patios">Retaining Walls & Patios</option>
+                  <option value="Season garden clean-up"> Seasonal garden clean-up</option>
+                  <option value="Custom garden care">Custom Garden Care</option>
                 </select>
               </div>
               <div className="col-12">
