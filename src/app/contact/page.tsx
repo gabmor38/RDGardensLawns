@@ -212,7 +212,7 @@ export default function Contact( ) {
             </div>
 
             <div className="col  mt-5" style={{display:'flex', alignItems:'start', flexDirection:"column"}}>
-            <h4>Business Hours</h4>
+            <h3 className="h3 mb-3">Business Hours</h3>
               <ul className="list-group-flush col-10 col-md-8 p-0">
                 <li className="list-group-item d-flex justify-content-between">
                   <strong>Monday</strong>
