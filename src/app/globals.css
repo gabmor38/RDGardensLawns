@@ -108,3 +108,12 @@ footer{
 .text-drop-shadow {
   text-shadow: -1px 3px 2px rgba(100, 100, 100, 0.3);
 }
+.radiusTop{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.cardBorderBottom {
+  border-bottom: 5px solid #818C78;
+  border-radius: '5px';
+}

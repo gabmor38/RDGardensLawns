@@ -129,9 +129,8 @@ export default function Contact( ) {
       </div>
 
       <div className="container text-center mb-5">
-        <div className="row g-1">
-          <div className="col-md-1"></div>
-          <div className="col-md-4 mb-3">
+        <div className="row g-3">
+          <div className="col-lg-5 mb-3">
             <div
               style={{
                 display: "flex",
@@ -211,9 +210,44 @@ export default function Contact( ) {
                 <p style={{ margin: "0px 10px" }}>Kemptville, ON</p>
               </div>
             </div>
+
+            <div className="col  mt-5" style={{display:'flex', alignItems:'start', flexDirection:"column"}}>
+            <h4>Business Hours</h4>
+              <ul className="list-group-flush col-10 col-md-8 p-0">
+                <li className="list-group-item d-flex justify-content-between">
+                  <strong>Monday</strong>
+                  <span>7:00 AM - 6:00 PM</span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between">
+                  <strong>Tuesday</strong>
+                  <span>7:00 AM - 6:00 PM</span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between flex-nowrap">
+                  <strong>Wednesday</strong>
+                  <span>7:00 AM - 6:00 PM</span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between">
+                  <strong>Thursday</strong>
+                  <span>7:00 AM - 6:00 PM</span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between">
+                  <strong>Friday</strong>
+                  <span>7:00 AM - 6:00 PM</span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between">
+                  <strong>Saturday</strong>
+                  <span>7:00 AM - 6:00 PM</span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between">
+                  <strong>Sunday</strong>
+                  <span>Closed</span>
+                </li>
+              </ul>
           </div>
+          </div>
+
           <div
-            className="col-md-5 rounded-2 p-3"
+            className="col rounded-2 p-3"
             style={{ background: "rgb(226 224 200 / 36%)" }}
           >
             <form className="row g-3 " >
@@ -335,19 +369,6 @@ export default function Contact( ) {
                   onChange={handleCaptcha}
                 />
               </div>
-{/* 
-              <div className="col-12 flex justify-content-center">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="gridCheck"
-                  />
-                  <label className="form-check-label ms-3" htmlFor="gridCheck">
-                    Check me out
-                  </label>
-                </div>
-              </div> */}
               <div className="col-12">
                 <button
                   type="submit"
@@ -360,6 +381,7 @@ export default function Contact( ) {
               </div>
             </form>
           </div>
+
         </div>
       </div>
       <div className="mb-5 mt-5"></div>

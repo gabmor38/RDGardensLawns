@@ -1,5 +1,8 @@
+'use client'
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { CldImage } from "next-cloudinary";
+
 
 export default function About() {
   return (
@@ -21,11 +24,22 @@ export default function About() {
   <div className="card mb-5 p-5" style={{border: '0px'}}>
     <div className="flex flex-col md:flex-row items-center md:items-start gap-5">
       <div className="w-full md:w-1/3 flex justify-center">
-        <img
+      <CldImage
+        src="hpwxiokm1rdn3mfxj3qt"
+        width="500"
+        height="500"
+        crop={{
+          type: "auto",
+          source: true,
+        }}
+        alt={"garden with pond"}
+        radius={45}
+      />
+        {/* <img
           src="/pond.png"
           className="img-fluid rounded"
           alt="Garden Retreat with Pond"
-        />
+        /> */}
       </div>
       <div className="w-full md:w-2/3">
         <div className="card-body text-justify">

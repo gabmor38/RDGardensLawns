@@ -1,12 +1,7 @@
+'use client'
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import pic1 from '../../../public/pic1.png'
-import pic2 from '../../../public/pic2a.jpg'
-import pic3 from '../../../public/pic3.png'
-import pic4 from '../../../public/pic4.jpg'
-import pic9 from '../../../public/pic9.jpg'
-import pic5 from '../../../public/pic5b.jpg'
-import Image from 'next/image'
+import { CldImage } from "next-cloudinary";
 
 
 
@@ -22,8 +17,19 @@ export default function Services() {
           <div className="row row-cols-1 row-cols-lg-3 g-4">
             <div className="col">
               <div className="card h-100">
-                <Image src={pic1} className="card-img-top card-img-fixed" alt="Mulched stone garden"/>
-                <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
+                <CldImage
+                  src="pic1"
+                  width="500"
+                  height="320"
+                  crop={{
+                    type: "auto",
+                    source: true,
+                  }}
+                  alt={"garden with rocks"}
+                  className={"radiusTop"}
+                  
+                />
+                <div className="card-body cardBorderBottom" >
                   <h4>Lawn Mowing</h4>
                   <p className="card-text">Lawn mowing available weekly or biweekly, with optional spring and fall cleanups.</p>
                 </div>
@@ -31,8 +37,18 @@ export default function Services() {
             </div>
             <div className="col">
               <div className="card h-100 ">
-                <Image src={pic2} className="card-img-top card-img-fixed" alt="Earthy Zen garden"/>
-                <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
+                <CldImage
+                  src="pic2_fftakc"
+                  width="500" 
+                  height="320"
+                  crop={{
+                    type: "auto",
+                    source: true,
+                  }}
+                  alt={"zen garden"}
+                  className={"radiusTop"}
+                />
+                <div className="card-body cardBorderBottom">
                   <h4>Retaining Walls & Patios</h4>
                  <p className="card-text">Installation of patios and retaining walls for functional and attractive garden spaces.</p>
                 </div>
@@ -40,8 +56,18 @@ export default function Services() {
             </div>
             <div className="col">
               <div className="card h-100 ">
-                <Image src={pic3} className="card-img-top card-img-fixed" alt="Low-maintenance garden"/>
-                <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
+                <CldImage
+                  src="ymvdc9naixeskcavvvo6"
+                  width="500" 
+                  height="320"
+                  crop={{
+                    type: "auto",
+                    source: true,
+                  }}
+                  alt={"entrance garden"}
+                  className={"radiusTop"}
+                />
+                <div className="card-body cardBorderBottom ">
                   <h4>Garden Installation</h4>
                   <p className="card-text">Offering professional garden installation projects, including the design and installation of new and updated gardens.</p>
                 </div>
@@ -49,8 +75,19 @@ export default function Services() {
             </div>
             <div className="col  mb-5">
               <div className="card h-100 ">
-                <Image src={pic9} className="card-img-top card-img-fixed" alt="Natural evergreen privacy fence"/>
-                <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
+              <CldImage
+                  src="iivnqoqvrsez6ok3xbpq"
+                  width="500" 
+                  height="320"
+                  crop={{
+                    type: "auto",
+                    source: true,
+                  }}
+                  alt={"Natural evergreen privacy fence"}
+                  className={"radiusTop"}
+                />
+                
+                <div className="card-body cardBorderBottom ">
                   <h4>Yard Work (On-Demand)</h4>
                   <p className="card-text">Flexible, on-demand yard work services to meet your immediate landscaping needs.</p>
                 </div>
@@ -58,8 +95,18 @@ export default function Services() {
             </div>
             <div className="col  mb-5">
               <div className="card h-100 ">
-                <Image src={pic5} className="card-img-top card-img-fixed" alt="flower bed"/>
-                <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
+                <CldImage
+                  src="rn5ryke4e1ey5b0ceanv" 
+                  width="500" 
+                  height="320"
+                  crop={{
+                    type: "auto",
+                    source: true,
+                  }}
+                  alt={"flower bed"}
+                  className={"radiusTop"}
+                />
+                <div className="card-body cardBorderBottom">
                   <h4>Spring & Fall Clean-Ups</h4>
                   <p className="card-text">Comprehensive seasonal clean-ups to refresh and prepare your yard for the changing seasons.</p>
                 </div>
@@ -67,8 +114,18 @@ export default function Services() {
             </div>
             <div className="col mb-5">
               <div className="card h-100 ">
-                <Image src={pic4} className="card-img-top  card-img-fixed" alt="sod and soil transformation" />
-                <div className="card-body" style={{borderBottom: '5px solid #818C78', borderRadius: '5px'}}>
+                <CldImage
+                  src="xzos6wuyt1alxp5cbqsi"
+                  width="500" 
+                  height="320"
+                  crop={{
+                    type: "auto",
+                    source: true,
+                  }}
+                  alt={"new sod installation"}
+                  className={"radiusTop"}
+                />
+                <div className="card-body cardBorderBottom" >
                   <h4>Sod Installation</h4>
                   <p className="card-text">Proven installation of sod to create new lawns or replace existing ones.</p>
                 </div>
