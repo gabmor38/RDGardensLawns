@@ -35,11 +35,6 @@ export default function About() {
         alt={"garden with pond"}
         radius={45}
       />
-        {/* <img
-          src="/pond.png"
-          className="img-fluid rounded"
-          alt="Garden Retreat with Pond"
-        /> */}
       </div>
       <div className="w-full md:w-2/3">
         <div className="card-body text-justify">
