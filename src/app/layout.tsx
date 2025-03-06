@@ -35,9 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
          <meta name="google-site-verification" content="_j3XM-jupTIiBwBISE2YljDhtDmrSrW6l0hGeihcxLk" />
-      </head>
+      </head> */}
       <body
         className={`${roboto.variable} antialiased`}
       >
